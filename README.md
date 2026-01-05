@@ -62,4 +62,4 @@ You can deploy this project using various hosting platforms like Vercel, Netlify
 
 Yes, you can!
 
-To connect a domain, follow your hosting provider's instructions for setting up a custom domain.
+To connect a domain, follow your hosting provider's instructions for setting up a custom
