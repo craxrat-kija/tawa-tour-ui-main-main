@@ -1,0 +1,182 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About TAWA",
+    "destinations": "Destinations",
+    "news": "News",
+    "events": "Events",
+    "investments": "Investments",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title1": "Tanzania Wildlife",
+    "title2": "Management Authority (TAWA)",
+    "office": "Our Main Office is at Morogoro-TAFORI",
+    "phone": "(0789498544)",
+    "protection": "Nature Protection",
+    "stewards": "Stewards",
+    "hunt": "Hunt With",
+    "us": "Us",
+    "tagline1": "TUMERITHISHWA",
+    "tagline2": "TUWARITHISHE",
+    "description": "Conserving and managing Tanzania's magnificent wildlife resources across Game Reserves and Controlled Areas for present and future generations.",
+    "exploreDestinations": "Explore Destinations",
+    "latestNews": "Latest News",
+    "gameReserves": "Game Reserves",
+    "discoverWildlife": "Discover Wildlife",
+    "exploreReserves": "Explore Game Reserves",
+    "experienceNature": "Experience Nature",
+    "protectHeritage": "Protect Heritage",
+    "exploreMore": "Explore More"
+  },
+  "stats": {
+    "protectedArea": "Protected Area",
+    "wildlifeSpecies": "Wildlife Species",
+    "annualVisitors": "Annual Visitors",
+    "conservationProjects": "Conservation Projects",
+    "stayUpdated": "Stay Updated",
+    "latestNews": "Latest News & Updates",
+    "description": "Keep up with the latest developments in wildlife conservation"
+  },
+  "about": {
+    "mission": "Our Mission",
+    "title": "Guardians of Tanzania's Wild Heritage",
+    "description": "TAWA is dedicated to the conservation, management, and sustainable utilization of wildlife resources in Game Reserves, ensuring biodiversity protection and community engagement.",
+    "page": {
+      "badge": "About Us",
+      "title": "Tanzania Wildlife Management Authority",
+      "subtitle": "Protecting and conserving Tanzania's rich wildlife heritage for present and future generations.",
+      "missionTitle": "Our Mission",
+      "missionText": "To conserve, manage, and sustainably utilize wildlife resources in Game Reserves, Game Controlled Areas, and Wildlife Management Areas for the benefit of present and future generations while contributing to national development.",
+      "visionTitle": "Our Vision",
+      "visionText": "To be a world-class wildlife management authority that ensures sustainable conservation and utilization of Tanzania's wildlife resources, recognized globally for excellence in wildlife conservation and eco-tourism.",
+      "storyBadge": "Our Story",
+      "storyTitle": "Three Decades of Conservation",
+      "storyPara1": "The Tanzania Wildlife Management Authority (TAWA) was established to address the growing need for dedicated wildlife conservation and management in Tanzania. With over 30 years of experience in wildlife protection, TAWA has become a cornerstone of Tanzania's conservation efforts.",
+      "storyPara2": "Managing over 170,000 square kilometers of protected areas, TAWA oversees some of Africa's most biodiverse regions. Our work encompasses anti-poaching operations, habitat restoration, community engagement programs, and sustainable tourism initiatives.",
+      "storyPara3": "Through partnerships with local communities, international organizations, and government bodies, we continue to expand our impact while ensuring that Tanzania's wildlife legacy is preserved for generations to come.",
+      "valuesBadge": "What We Stand For",
+      "valuesTitle": "Our Core Values",
+      "wildlifeProtection": "Wildlife Protection",
+      "wildlifeProtectionDesc": "Implementing advanced anti-poaching measures and patrol systems to protect endangered species.",
+      "ecosystemConservation": "Ecosystem Conservation",
+      "ecosystemConservationDesc": "Sustainable management practices that preserve natural habitats and biodiversity.",
+      "communityEngagement": "Community Engagement",
+      "communityEngagementDesc": "Creating economic opportunities for local communities through conservation tourism.",
+      "globalPartnerships": "Global Partnerships",
+      "globalPartnershipsDesc": "Collaborating with international organizations for world-class conservation standards."
+    }
+  },
+  "destinations": {
+    "explore": "Explore Wildlife",
+    "title": "Featured Destinations",
+    "description": "Discover Tanzania's most spectacular wildlife sanctuaries, each offering unique ecosystems and unforgettable safari experiences.",
+    "viewAll": "View All Destinations",
+    "page": {
+      "badge": "Explore Tanzania",
+      "title": "Our Destinations",
+      "subtitle": "Discover Tanzania's most spectacular wildlife sanctuaries managed by TAWA, each offering unique ecosystems and unforgettable safari experiences.",
+      "keyWildlife": "Key Wildlife",
+      "explore": "Explore",
+      "established": "Est."
+    }
+  },
+  "tours": {
+    "safari": "Safari Experiences",
+    "title": "Featured Tours",
+    "description": "Experience the thrill of African wildlife with our carefully curated safari packages across Tanzania's premier destinations.",
+    "viewDetails": "View Details"
+  },
+  "news": {
+    "updates": "News & Updates",
+    "title": "News & Events",
+    "description": "Stay updated with the latest news and upcoming events from Tanzania's wildlife conservation efforts.",
+    "latest": "Latest News",
+    "upcoming": "Upcoming Events",
+    "viewAll": "View all news",
+    "viewEvents": "View all events",
+    "page": {
+      "badge": "Stay Informed",
+      "title": "News & Events",
+      "subtitle": "Stay updated with the latest developments in wildlife conservation and events across all TAWA-managed areas.",
+      "readMore": "Read More"
+    }
+  },
+  "events": {
+    "page": {
+      "badge": "Upcoming Events",
+      "title": "Upcoming Events",
+      "subtitle": "Join us for exciting wildlife conservation events, educational workshops, and unforgettable safari experiences across Tanzania.",
+      "learnMore": "Learn More",
+      "noEvents": "No Upcoming Events",
+      "noEventsDesc": "Check back soon for upcoming events and activities."
+    },
+    "detail": {
+      "back": "Back",
+      "backToEvents": "Back to Events",
+      "viewAllEvents": "View All Events",
+      "about": "About This Event",
+      "eventInfo": "Event Information",
+      "date": "Date",
+      "location": "Location",
+      "relatedEvents": "Related Events",
+      "notFound": "Event Not Found",
+      "notFoundDesc": "The event you're looking for doesn't exist."
+    }
+  },
+  "contact": {
+    "badge": "Get In Touch",
+    "title": "Contact Us",
+    "subtitle": "Have questions about visiting our wildlife areas or need assistance? Our team is here to help.",
+    "formTitle": "Send us a Message",
+    "fullName": "Full Name",
+    "email": "Email Address",
+    "subject": "Subject",
+    "message": "Message",
+    "sendMessage": "Send Message",
+    "contactInfo": "Contact Information",
+    "address": "Address",
+    "phone": "Phone",
+    "emailLabel": "Email",
+    "officeHours": "Office Hours",
+    "messageSent": "Message Sent!",
+    "messageSentDesc": "Thank you for contacting us. We'll respond within 24-48 hours.",
+    "placeholders": {
+      "name": "John Doe",
+      "email": "john@example.com",
+      "subject": "How can we help?",
+      "message": "Tell us more about your inquiry..."
+    }
+  },
+  "investments": {
+    "badge": "Investment Opportunities",
+    "title": "Invest in Tanzania's Wildlife Future",
+    "subtitle": "Partner with TAWA to develop sustainable tourism, support conservation efforts, and create lasting impact for communities and wildlife.",
+    "opportunitiesBadge": "Opportunities",
+    "opportunitiesTitle": "Investment Areas",
+    "opportunitiesSubtitle": "Explore diverse investment opportunities across tourism, conservation, and community development sectors.",
+    "ecoLodge": "Eco-Lodge Development",
+    "ecoLodgeDesc": "Partner with TAWA to develop sustainable tourism accommodations within our managed areas.",
+    "tourOperations": "Tour Operations",
+    "tourOperationsDesc": "Licensed tour operator opportunities in TAWA-managed Game Reserves and Wildlife Management Areas.",
+    "conservationProjects": "Conservation Projects",
+    "conservationProjectsDesc": "Support critical conservation initiatives through funding, research partnerships, or technical assistance.",
+    "communityPrograms": "Community Programs",
+    "communityProgramsDesc": "Invest in community development projects that benefit local populations and wildlife conservation.",
+    "ctaTitle": "Ready to Make an Impact?",
+    "ctaSubtitle": "Connect with our investment team to discuss partnership opportunities and learn more about investing in Tanzania's wildlife future.",
+    "ctaButton": "Contact Investment Team",
+    "annualRevenue": "Annual Tourism Revenue",
+    "jobsCreated": "Local Jobs Created",
+    "investmentArea": "km² Investment Area",
+    "activePartners": "Active Partners"
+  },
+  "footer": {
+    "description": "Protecting Tanzania's wildlife heritage for future generations.",
+    "quickLinks": "Quick Links",
+    "contact": "Contact",
+    "followUs": "Follow Us",
+    "rights": "All rights reserved."
+  }
+}
+

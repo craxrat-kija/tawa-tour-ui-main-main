@@ -1,0 +1,103 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "about": "Über TAWA",
+    "destinations": "Reiseziele",
+    "news": "Nachrichten",
+    "events": "Veranstaltungen",
+    "investments": "Investitionen",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "title1": "Tansanische Wildtierverwaltungsbehörde",
+    "title2": "(TAWA)",
+    "office": "Unser Hauptbüro befindet sich in Morogoro-TAFORI",
+    "phone": "(0789498544)",
+    "protection": "Naturschutz",
+    "stewards": "Verwalter",
+    "hunt": "Jagen Mit",
+    "us": "Uns",
+    "tagline1": "TUMERITHISHWA",
+    "tagline2": "TUWARITHISHE",
+    "description": "Erhaltung und Verwaltung der großartigen Wildtierressourcen Tansanias in Wildreservaten und kontrollierten Gebieten für gegenwärtige und zukünftige Generationen.",
+    "exploreDestinations": "Reiseziele Erkunden",
+    "latestNews": "Neueste Nachrichten",
+    "gameReserves": "Wildreservate",
+    "discoverWildlife": "Wildtiere Entdecken",
+    "exploreReserves": "Reservate Erkunden",
+    "experienceNature": "Natur Erleben",
+    "protectHeritage": "Erbe Schützen",
+    "exploreMore": "Mehr Erkunden"
+  },
+  "stats": {
+    "protectedArea": "Geschütztes Gebiet",
+    "wildlifeSpecies": "Wildtierarten",
+    "annualVisitors": "Jährliche Besucher",
+    "conservationProjects": "Naturschutzprojekte",
+    "stayUpdated": "Auf dem Laufenden Bleiben",
+    "latestNews": "Neueste Nachrichten & Updates",
+    "description": "Bleiben Sie über die neuesten Entwicklungen im Wildtierschutz auf dem Laufenden"
+  },
+  "about": {
+    "mission": "Unsere Mission",
+    "title": "Hüter von Tansanias Wildem Erbe",
+    "description": "TAWA widmet sich der Erhaltung, Verwaltung und nachhaltigen Nutzung von Wildtierressourcen in Wildreservaten und gewährleistet den Schutz der Biodiversität und das Engagement der Gemeinschaft."
+  },
+  "destinations": {
+    "explore": "Wildtiere Erkunden",
+    "title": "Ausgewählte Reiseziele",
+    "description": "Entdecken Sie Tansanias spektakulärste Wildtierschutzgebiete, von denen jedes einzigartige Ökosysteme und unvergessliche Safari-Erlebnisse bietet.",
+    "viewAll": "Alle Reiseziele Anzeigen"
+  },
+  "tours": {
+    "safari": "Safari-Erlebnisse",
+    "title": "Ausgewählte Touren",
+    "description": "Erleben Sie den Nervenkitzel der afrikanischen Wildtiere mit unseren sorgfältig kuratierten Safari-Paketen in Tansanias führenden Reisezielen.",
+    "viewDetails": "Details Anzeigen"
+  },
+  "news": {
+    "updates": "Nachrichten & Updates",
+    "title": "Nachrichten & Veranstaltungen",
+    "description": "Bleiben Sie über die neuesten Nachrichten und bevorstehenden Veranstaltungen der tansanischen Wildtierschutzbemühungen informiert.",
+    "latest": "Neueste Nachrichten",
+    "upcoming": "Bevorstehende Veranstaltungen",
+    "viewAll": "Alle Nachrichten anzeigen",
+    "viewEvents": "Alle Veranstaltungen anzeigen",
+    "page": {
+      "badge": "Informiert Bleiben",
+      "title": "Nachrichten & Veranstaltungen",
+      "subtitle": "Bleiben Sie über die neuesten Entwicklungen im Wildtierschutz und Veranstaltungen in allen von TAWA verwalteten Gebieten informiert.",
+      "readMore": "Weiterlesen"
+    }
+  },
+  "events": {
+    "page": {
+      "badge": "Bevorstehende Veranstaltungen",
+      "title": "Bevorstehende Veranstaltungen",
+      "subtitle": "Nehmen Sie an aufregenden Wildtierschutzveranstaltungen, Bildungs-Workshops und unvergesslichen Safari-Erlebnissen in ganz Tansania teil.",
+      "learnMore": "Mehr Erfahren",
+      "noEvents": "Keine Bevorstehenden Veranstaltungen",
+      "noEventsDesc": "Schauen Sie bald wieder vorbei für bevorstehende Veranstaltungen und Aktivitäten."
+    },
+    "detail": {
+      "back": "Zurück",
+      "backToEvents": "Zurück zu Veranstaltungen",
+      "viewAllEvents": "Alle Veranstaltungen Anzeigen",
+      "about": "Über Diese Veranstaltung",
+      "eventInfo": "Veranstaltungsinformationen",
+      "date": "Datum",
+      "location": "Ort",
+      "relatedEvents": "Verwandte Veranstaltungen",
+      "notFound": "Veranstaltung Nicht Gefunden",
+      "notFoundDesc": "Die gesuchte Veranstaltung existiert nicht."
+    }
+  },
+  "footer": {
+    "description": "Schutz von Tansanias Wildtiererbe für zukünftige Generationen.",
+    "quickLinks": "Schnelllinks",
+    "contact": "Kontakt",
+    "followUs": "Folgen Sie uns",
+    "rights": "Alle Rechte vorbehalten."
+  }
+}
+

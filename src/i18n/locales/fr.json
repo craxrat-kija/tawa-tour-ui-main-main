@@ -1,0 +1,103 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos de TAWA",
+    "destinations": "Destinations",
+    "news": "Actualités",
+    "events": "Événements",
+    "investments": "Investissements",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title1": "Autorité de Gestion de la Faune de Tanzanie",
+    "title2": "(TAWA)",
+    "office": "Notre bureau principal est à Morogoro-TAFORI",
+    "phone": "(0789498544)",
+    "protection": "Protection de la Nature",
+    "stewards": "Intendants",
+    "hunt": "Chassez Avec",
+    "us": "Nous",
+    "tagline1": "TUMERITHISHWA",
+    "tagline2": "TUWARITHISHE",
+    "description": "Conservation et gestion des magnifiques ressources fauniques de la Tanzanie dans les Réserves de Gibier et les Zones Contrôlées pour les générations présentes et futures.",
+    "exploreDestinations": "Explorer les Destinations",
+    "latestNews": "Dernières Actualités",
+    "gameReserves": "Réserves de Gibier",
+    "discoverWildlife": "Découvrir la Faune",
+    "exploreReserves": "Explorer les Réserves",
+    "experienceNature": "Vivre la Nature",
+    "protectHeritage": "Protéger le Patrimoine",
+    "exploreMore": "Explorer Plus"
+  },
+  "stats": {
+    "protectedArea": "Zone Protégée",
+    "wildlifeSpecies": "Espèces Fauniques",
+    "annualVisitors": "Visiteurs Annuels",
+    "conservationProjects": "Projets de Conservation",
+    "stayUpdated": "Restez Informé",
+    "latestNews": "Dernières Actualités et Mises à Jour",
+    "description": "Suivez les derniers développements en matière de conservation de la faune"
+  },
+  "about": {
+    "mission": "Notre Mission",
+    "title": "Gardiennes du Patrimoine Sauvage de la Tanzanie",
+    "description": "TAWA est dédiée à la conservation, à la gestion et à l'utilisation durable des ressources fauniques dans les Réserves de Gibier, assurant la protection de la biodiversité et l'engagement communautaire."
+  },
+  "destinations": {
+    "explore": "Explorer la Faune",
+    "title": "Destinations en Vedette",
+    "description": "Découvrez les sanctuaires fauniques les plus spectaculaires de Tanzanie, chacun offrant des écosystèmes uniques et des expériences de safari inoubliables.",
+    "viewAll": "Voir Toutes les Destinations"
+  },
+  "tours": {
+    "safari": "Expériences de Safari",
+    "title": "Circuits en Vedette",
+    "description": "Vivez le frisson de la faune africaine avec nos forfaits safari soigneusement sélectionnés dans les destinations de premier plan de la Tanzanie.",
+    "viewDetails": "Voir les Détails"
+  },
+  "news": {
+    "updates": "Actualités et Mises à Jour",
+    "title": "Actualités et Événements",
+    "description": "Restez informé des dernières actualités et événements à venir des efforts de conservation de la faune en Tanzanie.",
+    "latest": "Dernières Actualités",
+    "upcoming": "Événements à Venir",
+    "viewAll": "Voir toutes les actualités",
+    "viewEvents": "Voir tous les événements",
+    "page": {
+      "badge": "Restez Informé",
+      "title": "Actualités et Événements",
+      "subtitle": "Restez informé des derniers développements en matière de conservation de la faune et des événements dans toutes les zones gérées par TAWA.",
+      "readMore": "Lire la Suite"
+    }
+  },
+  "events": {
+    "page": {
+      "badge": "Événements à Venir",
+      "title": "Événements à Venir",
+      "subtitle": "Rejoignez-nous pour des événements passionnants de conservation de la faune, des ateliers éducatifs et des expériences de safari inoubliables à travers la Tanzanie.",
+      "learnMore": "En Savoir Plus",
+      "noEvents": "Aucun Événement à Venir",
+      "noEventsDesc": "Revenez bientôt pour les événements et activités à venir."
+    },
+    "detail": {
+      "back": "Retour",
+      "backToEvents": "Retour aux Événements",
+      "viewAllEvents": "Voir Tous les Événements",
+      "about": "À Propos de Cet Événement",
+      "eventInfo": "Informations sur l'Événement",
+      "date": "Date",
+      "location": "Lieu",
+      "relatedEvents": "Événements Connexes",
+      "notFound": "Événement Introuvable",
+      "notFoundDesc": "L'événement que vous recherchez n'existe pas."
+    }
+  },
+  "footer": {
+    "description": "Protéger le patrimoine faunique de la Tanzanie pour les générations futures.",
+    "quickLinks": "Liens Rapides",
+    "contact": "Contact",
+    "followUs": "Suivez-nous",
+    "rights": "Tous droits réservés."
+  }
+}
+

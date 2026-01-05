@@ -1,0 +1,182 @@
+{
+  "nav": {
+    "home": "Nyumbani",
+    "about": "Kuhusu TAWA",
+    "destinations": "Maeneo",
+    "news": "Habari",
+    "events": "Matukio",
+    "investments": "Uwekezaji",
+    "contact": "Wasiliana"
+  },
+  "hero": {
+    "title1": "Mamlaka ya Utawala wa Wanyamapori Tanzania",
+    "title2": "(TAWA)",
+    "office": "Ofisi yetu kuu iko Morogoro-TAFORI",
+    "phone": "(0789498544)",
+    "protection": "Ulinzi wa Asili",
+    "stewards": "Wanadhamini",
+    "hunt": "Windia Na",
+    "us": "Sisi",
+    "tagline1": "TUMERITHISHWA",
+    "tagline2": "TUWARITHISHE",
+    "description": "Kuhifadhi na kusimamia rasilimali za wanyamapori za Tanzania katika Hifadhi za Wanyamapori na Maeneo yaliyodhibitiwa kwa vizazi vya sasa na vijavyo.",
+    "exploreDestinations": "Gundua Maeneo",
+    "latestNews": "Habari za Hivi Karibuni",
+    "gameReserves": "Hifadhi za Wanyamapori",
+    "discoverWildlife": "Gundua Wanyamapori",
+    "exploreReserves": "Gundua Hifadhi za Wanyamapori",
+    "experienceNature": "Jione Asili",
+    "protectHeritage": "Linda Urithi",
+    "exploreMore": "Gundua Zaidi"
+  },
+  "stats": {
+    "protectedArea": "Eneo Lililolindwa",
+    "wildlifeSpecies": "Aina za Wanyamapori",
+    "annualVisitors": "Wageni wa Kila Mwaka",
+    "conservationProjects": "Miradi ya Uhifadhi",
+    "stayUpdated": "Endelea Kujua",
+    "latestNews": "Habari na Matukio ya Hivi Karibuni",
+    "description": "Endelea kufuatilia maendeleo ya hivi karibuni katika uhifadhi wa wanyamapori"
+  },
+  "about": {
+    "mission": "Lengo Letu",
+    "title": "Walindi wa Urithi wa Wanyamapori wa Tanzania",
+    "description": "TAWA imejitolea kuhifadhi, kusimamia, na kutumia kwa uendelevu rasilimali za wanyamapori katika Hifadhi za Wanyamapori, kuhakikisha ulinzi wa bioanuwai na ushiriki wa jamii.",
+    "page": {
+      "badge": "Kuhusu Sisi",
+      "title": "Mamlaka ya Utawala wa Wanyamapori Tanzania",
+      "subtitle": "Kulinda na kuhifadhi urithi wa wanyamapori wa Tanzania kwa vizazi vya sasa na vijavyo.",
+      "missionTitle": "Lengo Letu",
+      "missionText": "Kuhifadhi, kusimamia, na kutumia kwa uendelevu rasilimali za wanyamapori katika Hifadhi za Wanyamapori, Maeneo yaliyodhibitiwa ya Wanyamapori, na Maeneo ya Usimamizi wa Wanyamapori kwa faida ya vizazi vya sasa na vijavyo huku tukichangia maendeleo ya taifa.",
+      "visionTitle": "Maono Yetu",
+      "visionText": "Kuwa mamlaka ya kiwango cha dunia ya usimamizi wa wanyamapori inayohakikisha uhifadhi na matumizi endelevu ya rasilimali za wanyamapori za Tanzania, ikitambuliwa kimataifa kwa ubora katika uhifadhi wa wanyamapori na utalii wa ikolojia.",
+      "storyBadge": "Hadithi Yetu",
+      "storyTitle": "Miongo Mitatu ya Uhifadhi",
+      "storyPara1": "Mamlaka ya Utawala wa Wanyamapori Tanzania (TAWA) ilianzishwa ili kushughulikia hitaji linalokua la uhifadhi na usimamizi wa wanyamapori nchini Tanzania. Kwa uzoefu wa zaidi ya miaka 30 katika ulinzi wa wanyamapori, TAWA imekuwa msingi wa juhudi za uhifadhi za Tanzania.",
+      "storyPara2": "Kusimamia zaidi ya kilomita za mraba 170,000 za maeneo yaliyolindwa, TAWA inasimamia baadhi ya maeneo yenye bioanuwai nyingi zaidi barani Afrika. Kazi yetu inajumuisha operesheni za kupambana na uwindaji haramu, kurejesha makao, mipango ya ushiriki wa jamii, na mipango ya utalii endelevu.",
+      "storyPara3": "Kupitia ushirikiano na jamii za wenyeji, mashirika ya kimataifa, na taasisi za serikali, tunaendelea kupanua athari zetu huku tukihakikisha kuwa urithi wa wanyamapori wa Tanzania unahifadhiwa kwa vizazi vijavyo.",
+      "valuesBadge": "Tunachokiamini",
+      "valuesTitle": "Maadili Yetu ya Msingi",
+      "wildlifeProtection": "Ulinzi wa Wanyamapori",
+      "wildlifeProtectionDesc": "Kutekeleza hatua za hali ya juu za kupambana na uwindaji haramu na mifumo ya ulinzi ili kulinda spishi zilizo hatarini.",
+      "ecosystemConservation": "Uhifadhi wa Mfumo wa Ikologia",
+      "ecosystemConservationDesc": "Mazoea ya usimamizi endelevu yanayohifadhi makao ya asili na bioanuwai.",
+      "communityEngagement": "Ushiriki wa Jamii",
+      "communityEngagementDesc": "Kuunda fursa za kiuchumi kwa jamii za wenyeji kupitia utalii wa uhifadhi.",
+      "globalPartnerships": "Ushirikiano wa Kimataifa",
+      "globalPartnershipsDesc": "Kushirikiana na mashirika ya kimataifa kwa viwango vya kiwango cha dunia vya uhifadhi."
+    }
+  },
+  "destinations": {
+    "explore": "Gundua Wanyamapori",
+    "title": "Maeneo Maarufu",
+    "description": "Gundua hifadhi za wanyamapori za ajabu za Tanzania, kila moja inatoa mifumo ikolojia ya kipekee na uzoefu wa safari usiosahaulika.",
+    "viewAll": "Angalia Maeneo Yote",
+    "page": {
+      "badge": "Gundua Tanzania",
+      "title": "Maeneo Yetu",
+      "subtitle": "Gundua hifadhi za wanyamapori za ajabu za Tanzania zinazosimamiwa na TAWA, kila moja inatoa mifumo ikolojia ya kipekee na uzoefu wa safari usiosahaulika.",
+      "keyWildlife": "Wanyamapori Muhimu",
+      "explore": "Gundua",
+      "established": "Imeanzishwa"
+    }
+  },
+  "tours": {
+    "safari": "Uzoefu wa Safari",
+    "title": "Safari Maarufu",
+    "description": "Jione msisimko wa wanyamapori wa Kiafrika na vifurushi vyetu vya safari vilivyochaguliwa kwa uangalifu katika maeneo bora ya Tanzania.",
+    "viewDetails": "Angalia Maelezo"
+  },
+  "news": {
+    "updates": "Habari na Matukio",
+    "title": "Habari na Matukio",
+    "description": "Endelea kujua habari na matukio yanayokuja kutoka kwa juhudi za uhifadhi wa wanyamapori za Tanzania.",
+    "latest": "Habari za Hivi Karibuni",
+    "upcoming": "Matukio Yanayokuja",
+    "viewAll": "Angalia habari zote",
+    "viewEvents": "Angalia matukio yote",
+    "page": {
+      "badge": "Endelea Kujua",
+      "title": "Habari na Matukio",
+      "subtitle": "Endelea kujua maendeleo ya hivi karibuni katika uhifadhi wa wanyamapori na matukio katika maeneo yote yanayosimamiwa na TAWA.",
+      "readMore": "Soma Zaidi"
+    }
+  },
+  "events": {
+    "page": {
+      "badge": "Matukio Yanayokuja",
+      "title": "Matukio Yanayokuja",
+      "subtitle": "Jiunge nasi kwa matukio ya kusisimua ya uhifadhi wa wanyamapori, warsha za elimu, na uzoefu wa safari usiosahaulika katika Tanzania.",
+      "learnMore": "Jifunze Zaidi",
+      "noEvents": "Hakuna Matukio Yanayokuja",
+      "noEventsDesc": "Angalia tena hivi karibuni kwa matukio na shughuli zinazokuja."
+    },
+    "detail": {
+      "back": "Rudi",
+      "backToEvents": "Rudi kwenye Matukio",
+      "viewAllEvents": "Angalia Matukio Yote",
+      "about": "Kuhusu Tukio Hili",
+      "eventInfo": "Maelezo ya Tukio",
+      "date": "Tarehe",
+      "location": "Eneo",
+      "relatedEvents": "Matukio Yanayohusiana",
+      "notFound": "Tukio Halijapatikana",
+      "notFoundDesc": "Tukio unalotafuta halipo."
+    }
+  },
+  "contact": {
+    "badge": "Wasiliana Nasi",
+    "title": "Wasiliana Nasi",
+    "subtitle": "Una maswali kuhusu kutembelea maeneo yetu ya wanyamapori au unahitaji msaada? Timu yetu iko hapa kukusaidia.",
+    "formTitle": "Tutume Ujumbe",
+    "fullName": "Jina Kamili",
+    "email": "Anwani ya Barua Pepe",
+    "subject": "Somo",
+    "message": "Ujumbe",
+    "sendMessage": "Tuma Ujumbe",
+    "contactInfo": "Taarifa za Mawasiliano",
+    "address": "Anwani",
+    "phone": "Simu",
+    "emailLabel": "Barua Pepe",
+    "officeHours": "Masaa ya Ofisi",
+    "messageSent": "Ujumbe Umetumwa!",
+    "messageSentDesc": "Asante kwa kuwasiliana nasi. Tutajibu ndani ya masaa 24-48.",
+    "placeholders": {
+      "name": "Jina Kamili",
+      "email": "jina@mfano.com",
+      "subject": "Tunaweza kukusaidia vipi?",
+      "message": "Tueleze zaidi kuhusu swali lako..."
+    }
+  },
+  "investments": {
+    "badge": "Fursa za Uwekezaji",
+    "title": "Wekeza Katika Mustakabali wa Wanyamapori wa Tanzania",
+    "subtitle": "Shirikiana na TAWA kuendeleza utalii endelevu, kuunga mkono juhudi za uhifadhi, na kuunda athari ya kudumu kwa jamii na wanyamapori.",
+    "opportunitiesBadge": "Fursa",
+    "opportunitiesTitle": "Maeneo ya Uwekezaji",
+    "opportunitiesSubtitle": "Gundua fursa mbalimbali za uwekezaji katika sekta za utalii, uhifadhi, na maendeleo ya jamii.",
+    "ecoLodge": "Maendeleo ya Eco-Lodge",
+    "ecoLodgeDesc": "Shirikiana na TAWA kuendeleza malazi ya utalii endelevu ndani ya maeneo yetu yanayosimamiwa.",
+    "tourOperations": "Uendeshaji wa Ziara",
+    "tourOperationsDesc": "Fursa za waendeshaji wa ziara walio na leseni katika Hifadhi za Wanyamapori na Maeneo ya Usimamizi wa Wanyamapori yanayosimamiwa na TAWA.",
+    "conservationProjects": "Miradi ya Uhifadhi",
+    "conservationProjectsDesc": "Kuunga mkono mipango muhimu ya uhifadhi kupitia ufadhili, ushirikiano wa utafiti, au msaada wa kiufundi.",
+    "communityPrograms": "Mipango ya Jamii",
+    "communityProgramsDesc": "Wekeza katika miradi ya maendeleo ya jamii inayofaa kwa watu wa eneo hilo na uhifadhi wa wanyamapori.",
+    "ctaTitle": "Tayari Kufanya Athari?",
+    "ctaSubtitle": "Wasiliana na timu yetu ya uwekezaji kujadili fursa za ushirikiano na kujifunza zaidi kuhusu kuwekeza katika mustakabali wa wanyamapori wa Tanzania.",
+    "ctaButton": "Wasiliana na Timu ya Uwekezaji",
+    "annualRevenue": "Mapato ya Kila Mwaka ya Utalii",
+    "jobsCreated": "Kazi za Kienyeji Zilizoundwa",
+    "investmentArea": "km² Eneo la Uwekezaji",
+    "activePartners": "Washirika Wenye Shughuli"
+  },
+  "footer": {
+    "description": "Kulinda urithi wa wanyamapori wa Tanzania kwa vizazi vijavyo.",
+    "quickLinks": "Viungo vya Haraka",
+    "contact": "Wasiliana",
+    "followUs": "Tufuate",
+    "rights": "Haki zote zimehifadhiwa."
+  }
+}
+

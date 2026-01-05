@@ -1,0 +1,103 @@
+{
+  "nav": {
+    "home": "首页",
+    "about": "关于TAWA",
+    "destinations": "目的地",
+    "news": "新闻",
+    "events": "活动",
+    "investments": "投资",
+    "contact": "联系我们"
+  },
+  "hero": {
+    "title1": "坦桑尼亚野生动物管理局",
+    "title2": "(TAWA)",
+    "office": "我们的主要办公室位于Morogoro-TAFORI",
+    "phone": "(0789498544)",
+    "protection": "自然保护",
+    "stewards": "管理者",
+    "hunt": "与我们一起",
+    "us": "狩猎",
+    "tagline1": "TUMERITHISHWA",
+    "tagline2": "TUWARITHISHE",
+    "description": "为现在和未来的世代保护和管理的坦桑尼亚壮丽野生动物资源，涵盖野生动物保护区和控制区。",
+    "exploreDestinations": "探索目的地",
+    "latestNews": "最新消息",
+    "gameReserves": "野生动物保护区",
+    "discoverWildlife": "发现野生动物",
+    "exploreReserves": "探索保护区",
+    "experienceNature": "体验自然",
+    "protectHeritage": "保护遗产",
+    "exploreMore": "探索更多"
+  },
+  "stats": {
+    "protectedArea": "保护区",
+    "wildlifeSpecies": "野生动物种类",
+    "annualVisitors": "年访客量",
+    "conservationProjects": "保护项目",
+    "stayUpdated": "保持更新",
+    "latestNews": "最新新闻与更新",
+    "description": "了解野生动物保护的最新发展"
+  },
+  "about": {
+    "mission": "我们的使命",
+    "title": "坦桑尼亚野生遗产的守护者",
+    "description": "TAWA致力于在野生动物保护区中保护、管理和可持续利用野生动物资源，确保生物多样性保护和社区参与。"
+  },
+  "destinations": {
+    "explore": "探索野生动物",
+    "title": "精选目的地",
+    "description": "发现坦桑尼亚最壮观的野生动物保护区，每个都提供独特的生态系统和难忘的野生动物园体验。",
+    "viewAll": "查看所有目的地"
+  },
+  "tours": {
+    "safari": "野生动物园体验",
+    "title": "精选旅游",
+    "description": "通过我们在坦桑尼亚顶级目的地精心策划的野生动物园套餐，体验非洲野生动物的刺激。",
+    "viewDetails": "查看详情"
+  },
+  "news": {
+    "updates": "新闻与更新",
+    "title": "新闻与活动",
+    "description": "了解坦桑尼亚野生动物保护工作的最新新闻和即将举行的活动。",
+    "latest": "最新新闻",
+    "upcoming": "即将举行的活动",
+    "viewAll": "查看所有新闻",
+    "viewEvents": "查看所有活动",
+    "page": {
+      "badge": "保持了解",
+      "title": "新闻与活动",
+      "subtitle": "了解TAWA管理区域内野生动物保护和活动的最新发展。",
+      "readMore": "阅读更多"
+    }
+  },
+  "events": {
+    "page": {
+      "badge": "即将举行的活动",
+      "title": "即将举行的活动",
+      "subtitle": "加入我们，参加坦桑尼亚各地令人兴奋的野生动物保护活动、教育研讨会和难忘的野生动物园体验。",
+      "learnMore": "了解更多",
+      "noEvents": "没有即将举行的活动",
+      "noEventsDesc": "请稍后再查看即将举行的活动和活动。"
+    },
+    "detail": {
+      "back": "返回",
+      "backToEvents": "返回活动",
+      "viewAllEvents": "查看所有活动",
+      "about": "关于此活动",
+      "eventInfo": "活动信息",
+      "date": "日期",
+      "location": "地点",
+      "relatedEvents": "相关活动",
+      "notFound": "未找到活动",
+      "notFoundDesc": "您要查找的活动不存在。"
+    }
+  },
+  "footer": {
+    "description": "为未来世代保护坦桑尼亚的野生动物遗产。",
+    "quickLinks": "快速链接",
+    "contact": "联系方式",
+    "followUs": "关注我们",
+    "rights": "版权所有。"
+  }
+}
+
