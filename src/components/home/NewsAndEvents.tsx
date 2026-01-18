@@ -149,7 +149,7 @@ export default function NewsAndEvents() {
 
                     <Link
                       to={`/news/${news.id}`}
-                      className="block bg-background hover:bg-muted/50 rounded-xl overflow-hidden border border-border hover:border-jungle/30 transition-all duration-300 shadow-sm hover:shadow-md h-full relative z-10"
+                      className="block bg-card hover:bg-muted/50 rounded-xl overflow-hidden border border-border hover:border-jungle/30 transition-all duration-300 shadow-sm hover:shadow-md h-full relative z-10"
                     >
                       <div className="p-3 h-full flex flex-col relative z-10">
                         <div className="flex flex-col sm:flex-row items-start gap-4 flex-1">
@@ -258,7 +258,7 @@ export default function NewsAndEvents() {
 
                     <Link
                       to={`/events/${event.id}`}
-                      className="block bg-background hover:bg-muted/50 rounded-xl overflow-hidden border border-border hover:border-jungle/30 transition-all duration-300 shadow-sm hover:shadow-md relative z-10"
+                      className="block bg-card hover:bg-muted/50 rounded-xl overflow-hidden border border-border hover:border-jungle/30 transition-all duration-300 shadow-sm hover:shadow-md relative z-10"
                     >
                       <div className="p-3 h-full flex flex-col relative z-10">
                         <div className="flex gap-4 items-center">

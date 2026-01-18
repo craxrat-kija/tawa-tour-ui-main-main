@@ -330,10 +330,10 @@ export default function HeroSection() {
         </motion.div>
       </section>
 
-      <section className="relative bg-white pt-8 md:pt-12">
+      <section className="relative bg-background pt-8 md:pt-12">
         <div className="container-safari py-4 md:py-6 max-w-[1600px]">
           {/* Top Section - Game Reserves Section */}
-          <div className="w-full bg-gradient-to-br from-jungle/8 via-jungle/5 to-jungle/8 relative overflow-hidden rounded-2xl border border-jungle/20 shadow-lg mb-8 md:mb-12">
+          <div className="w-full bg-card/30 relative overflow-hidden rounded-2xl border border-jungle/20 shadow-lg mb-8 md:mb-12">
             {/* Simple Background Effects */}
             <div className="absolute inset-0 bg-jungle/[0.02]" />
 
@@ -365,12 +365,12 @@ export default function HeroSection() {
                       viewport={{ once: true }}
                       transition={{ duration: 0.8, delay: 0.2 }}
                     />
-                    <span className="text-sm font-heading font-black text-jungle uppercase tracking-[0.3em]">
+                    <span className="text-sm font-heading font-black text-primary uppercase tracking-[0.3em]">
                       {t('hero.gameReserves')}
                     </span>
                   </div>
                   <h2 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-foreground mb-6 leading-[0.9] tracking-tighter">
-                    Explore Game <br /><span className="text-jungle">Reserves</span>
+                    Explore Game <br /><span className="text-primary">Reserves</span>
                   </h2>
                   <p className="text-muted-foreground text-base md:text-xl max-w-xl font-medium leading-relaxed">
                     {t('hero.discoverWildlife')}
@@ -378,10 +378,10 @@ export default function HeroSection() {
                 </motion.div>
 
                 {/* Right Column: Wildlife Gallery */}
-                <Link to="/gallery" className="relative h-[350px] md:h-[450px] w-full lg:pl-12 block group/gallery">
+                <Link to="/gallery" className="relative h-[350px] md:h-[450px] w-full lg:pl-12 block group/gallery z-20">
                   {/* Main Video/Image Showcase */}
                   <motion.div
-                    className="absolute inset-0 bg-jungle-dark rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white group"
+                    className="absolute inset-0 bg-jungle-dark rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-jungle/20 group"
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
@@ -403,7 +403,7 @@ export default function HeroSection() {
                     {/* Info Label */}
                     <div className="absolute bottom-6 left-6 flex items-center gap-3">
                       <div className="w-10 h-10 rounded-full bg-jungle-yellow/90 flex items-center justify-center">
-                        <Camera className="w-5 h-5 text-jungle-dark" />
+                        <Camera className="w-5 h-5 text-white" />
                       </div>
                       <span className="text-white font-heading font-black text-xs uppercase tracking-widest shadow-sm">Live Wildlife Feed</span>
                     </div>
@@ -417,7 +417,10 @@ export default function HeroSection() {
                     whileInView={{ opacity: 1, y: 0, rotate: 5 }}
                     viewport={{ once: true }}
                     animate={{ y: [0, -12, 0] }}
-                    transition={{ y: { duration: 4, repeat: Infinity, ease: "easeInOut" }, opacity: { delay: 0.4 }, y: { delay: 0.4 } }}
+                    transition={{
+                      y: { duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.4 },
+                      opacity: { delay: 0.4 }
+                    }}
                   >
                     <img src={mikumiImage} alt="Mobile View" className="w-full h-full object-cover opacity-90" />
                     <div className="absolute top-2 left-1/2 -translate-x-1/2 w-12 h-4 bg-black rounded-full" />
@@ -425,7 +428,7 @@ export default function HeroSection() {
 
                   {/* Phone 2 (Left Back) */}
                   <motion.div
-                    className="absolute -left-4 top-10 md:-left-8 md:top-16 w-[130px] md:w-[160px] aspect-[9/19] bg-black rounded-[2rem] border-[5px] border-[#1a1a1a] shadow-xl overflow-hidden z-10 hidden md:block opacity-60 grayscale hover:grayscale-0 transition-all duration-500"
+                    className="absolute -left-4 top-10 md:-left-8 md:top-16 w-[130px] md:w-[160px] aspect-[9/19] bg-black rounded-[2rem] border-[5px] border-primary/20 shadow-xl overflow-hidden z-10 hidden md:block opacity-60 grayscale hover:grayscale-0 transition-all duration-500"
                     initial={{ opacity: 0, x: -50, rotate: -15 }}
                     whileInView={{ opacity: 0.6, x: 0, rotate: -10 }}
                     viewport={{ once: true }}
@@ -477,10 +480,10 @@ export default function HeroSection() {
                       >
                         <Link
                           to={`/destination/${getDestinationSlug(reserve.name)}`}
-                          className="block bg-white rounded-2xl overflow-hidden border border-border/50 hover:border-jungle transition-all duration-300 shadow-sm hover:shadow-lg relative h-full flex flex-col group/card"
+                          className="block bg-card rounded-2xl overflow-hidden border border-border/50 hover:border-jungle transition-all duration-300 shadow-sm hover:shadow-lg relative h-full flex flex-col group/card"
                         >
                           {/* Animated Color Shift on Hover */}
-                          <div className="absolute inset-0 bg-jungle/0 group-hover:bg-jungle/[0.02] transition-colors duration-300" />
+                          <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/[0.02] transition-colors duration-300" />
 
                           {/* Top Image Section */}
                           <div className="relative w-full h-40 sm:h-48 overflow-hidden">
@@ -506,7 +509,7 @@ export default function HeroSection() {
                           <div className="relative flex flex-col p-5 md:p-6 flex-grow z-10">
                             {/* Reserve Name & Area */}
                             <div className="flex items-start justify-between mb-2">
-                              <h3 className="text-lg font-heading font-bold text-foreground group-hover:text-jungle transition-colors duration-300 line-clamp-1 flex-grow" title={reserve.name}>
+                              <h3 className="text-lg font-heading font-bold text-foreground group-hover:text-primary transition-colors duration-300 line-clamp-1 flex-grow" title={reserve.name}>
                                 {reserve.name}
                               </h3>
                               <span className="text-[10px] font-bold bg-jungle/10 text-jungle px-1.5 py-0.5 rounded ml-2 whitespace-nowrap">
@@ -522,7 +525,7 @@ export default function HeroSection() {
                             {/* Footer info: Wildlife & CTA */}
                             <div className="mt-auto space-y-3">
                               {/* Wildlife pill */}
-                              <div className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-jungle/5 text-jungle-dark text-xs font-medium rounded-md border border-jungle/10 max-w-full">
+                              <div className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-primary/10 text-primary text-xs font-bold rounded-md border border-primary/20 max-w-full">
                                 <TreePine className="w-3.5 h-3.5 flex-shrink-0" />
                                 <span className="truncate">{reserve.wildlife?.split(',')[0]}</span>
                               </div>
@@ -576,7 +579,7 @@ export default function HeroSection() {
           </div>
 
           {/* Bottom Section - News & Updates */}
-          <div className="w-full bg-background relative overflow-hidden rounded-2xl border border-border mt-8">
+          <div className="w-full bg-card/30 relative overflow-hidden rounded-2xl border border-border mt-8">
             <NewsAndEvents />
           </div>
         </div>

@@ -62,7 +62,7 @@ export default function AboutSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="inline-block px-4 py-1 bg-jungle/10 text-jungle rounded-full text-sm font-medium mb-6"
+              className="inline-block px-4 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium mb-6"
             >
               {t('about.mission')}
             </motion.span>
@@ -106,7 +106,7 @@ export default function AboutSection() {
                       <feature.icon className={`w-6 h-6 ${feature.iconColor}`} />
                     </div>
                     <div className="flex-1">
-                      <h3 className="font-semibold text-foreground mb-2 group-hover:text-jungle transition-colors">
+                      <h3 className="font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
                         {feature.title}
                       </h3>
                       <p className="text-muted-foreground text-sm leading-relaxed">
@@ -164,7 +164,7 @@ export default function AboutSection() {
                 whileHover={{ scale: 1.1 }}
                 className="absolute top-8 right-8 bg-card px-5 py-3 rounded-2xl shadow-card border border-jungle/20 hover:border-jungle/40 transition-colors"
               >
-                <span className="text-jungle font-bold text-lg">170K+ km²</span>
+                <span className="text-primary font-bold text-lg">170K+ km²</span>
                 <div className="text-xs text-muted-foreground mt-1">Protected</div>
               </motion.div>
 

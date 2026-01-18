@@ -37,7 +37,7 @@ export default function DestinationsSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-4 py-1 bg-jungle/10 text-jungle rounded-full text-sm font-medium mb-4">
+          <span className="inline-block px-4 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
             {t('destinations.explore')}
           </span>
           <div className="min-h-[3rem] md:min-h-[4rem] mb-4">
@@ -126,7 +126,7 @@ export default function DestinationsSection() {
                       {dest.wildlife.slice(0, 3).map((animal) => (
                         <span
                           key={animal}
-                          className="text-xs px-3 py-1 bg-jungle/10 text-jungle rounded-full border border-jungle/20 font-medium"
+                          className="text-xs px-3 py-1 bg-primary/10 text-primary rounded-full border border-primary/20 font-medium"
                         >
                           {animal}
                         </span>
@@ -137,7 +137,7 @@ export default function DestinationsSection() {
                     <div className="flex items-center justify-between pt-4 border-t border-jungle/10">
                       <span className="text-sm text-muted-foreground">{t('destinations.explore')}</span>
                       <motion.span
-                        className="inline-flex items-center gap-2 text-jungle font-semibold text-sm"
+                        className="inline-flex items-center gap-2 text-primary font-semibold text-sm"
                         whileHover={{ x: 5 }}
                       >
                         {t('destinations.viewAll')}

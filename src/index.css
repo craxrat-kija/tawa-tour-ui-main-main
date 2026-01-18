@@ -72,61 +72,63 @@
   }
 
   .dark {
-    /* Malachite Green Dark Theme */
-    --background: 142 85% 12%;
-    --foreground: 45 30% 95%;
+    /* Jungle Green Dark Theme - Background matched to Nav Bar (#15803d) */
+    --background: 142 72% 29%;
+    --foreground: 0 0% 100%;
 
-    --card: 142 80% 15%;
-    --card-foreground: 45 30% 95%;
+    --card: 142 72% 22%;
+    --card-foreground: 0 0% 100%;
 
-    --popover: 142 85% 12%;
-    --popover-foreground: 45 30% 95%;
+    --popover: 142 72% 25%;
+    --popover-foreground: 0 0% 100%;
 
-    --primary: 142 75% 50%;
-    --primary-foreground: 45 30% 97%;
+    /* Primary accent color - Bright green for visibility on #15803d background */
+    --primary: 142 85% 75%;
+    --primary-foreground: 142 80% 15%;
 
-    --secondary: 30 20% 25%;
-    --secondary-foreground: 45 30% 95%;
+    --secondary: 142 60% 20%;
+    --secondary-foreground: 0 0% 100%;
 
     --accent: 35 85% 55%;
-    --accent-foreground: 142 30% 15%;
+    --accent-foreground: 142 80% 15%;
 
-    --muted: 142 75% 15%;
-    --muted-foreground: 45 15% 65%;
+    --muted: 142 60% 25%;
+    --muted-foreground: 142 10% 85%;
 
-    --destructive: 0 62% 30%;
-    --destructive-foreground: 45 30% 95%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 142 75% 22%;
-    --input: 142 80% 18%;
-    --ring: 142 75% 50%;
+    --border: 142 60% 45%;
+    --input: 142 60% 42%;
+    --ring: 142 85% 65%;
 
-    --jungle: 142 75% 50%;
-    --jungle-light: 142 70% 65%;
-    --jungle-dark: 142 80% 40%;
-    --jungle-bright: 142 85% 60%;
-    --earth: 30 20% 25%;
-    --earth-light: 30 18% 40%;
+    /* Jungle Tokens - Restored to logical brand values */
+    --jungle: 142 72% 29%;
+    --jungle-light: 142 72% 45%;
+    --jungle-dark: 142 72% 15%;
+    --jungle-bright: 142 72% 55%;
+    --earth: 30 20% 18%;
+    --earth-light: 30 15% 35%;
     --jungle-yellow: 35 85% 55%;
     --jungle-yellow-light: 35 80% 70%;
     --jungle-gold: 32 90% 50%;
     --jungle-teal: 180 45% 45%;
     --jungle-teal-light: 180 40% 60%;
-    --cream: 45 15% 15%;
-    --cream-dark: 45 10% 10%;
+    --cream: 142 40% 35%;
+    --cream-dark: 142 45% 30%;
 
-    --gradient-jungle: linear-gradient(135deg, hsl(142 80% 40%), hsl(142 75% 50%), hsl(142 70% 60%));
-    --gradient-safari: linear-gradient(135deg, hsl(142 75% 50%), hsl(142 70% 65%), hsl(35 85% 55%));
+    --gradient-jungle: linear-gradient(135deg, hsl(142 85% 20%), hsl(142 72% 29%), hsl(142 60% 45%));
+    --gradient-safari: linear-gradient(135deg, hsl(142 72% 29%), hsl(142 60% 45%), hsl(35 85% 55%));
     --gradient-gold: linear-gradient(135deg, hsl(35 85% 55%), hsl(32 90% 50%), hsl(35 80% 70%));
-    --gradient-hero: linear-gradient(180deg, hsla(0 0% 0% / 0.7) 0%, hsla(0 0% 0% / 0.4) 100%);
-    --gradient-shine: linear-gradient(135deg, hsl(142 75% 50% / 0.8), hsl(35 85% 55% / 0.8));
+    --gradient-hero: linear-gradient(180deg, hsla(142 72% 29% / 0.8) 0%, hsla(142 72% 29% / 0.4) 100%);
+    --gradient-shine: linear-gradient(135deg, hsl(142 75% 55% / 0.8), hsl(35 85% 55% / 0.8));
 
-    --shadow-soft: 0 4px 20px hsla(142 75% 50% / 0.3), 0 0 10px hsla(142 75% 50% / 0.2);
-    --shadow-card: 0 8px 30px hsla(142 75% 50% / 0.35), 0 0 20px hsla(142 75% 50% / 0.25);
-    --shadow-elevated: 0 20px 60px hsla(142 75% 50% / 0.45), 0 0 40px hsla(142 75% 50% / 0.35);
-    --shadow-glow: 0 0 60px hsla(142 75% 50% / 0.6), 0 0 120px hsla(142 75% 50% / 0.4), 0 0 180px hsla(35 85% 55% / 0.3);
-    --shadow-gold-glow: 0 0 50px hsla(35 85% 55% / 0.7), 0 0 100px hsla(35 85% 55% / 0.5), 0 0 150px hsla(32 90% 50% / 0.4);
-    --shadow-bright: 0 0 30px hsla(142 75% 50% / 0.5), 0 0 60px hsla(142 75% 50% / 0.4), 0 0 90px hsla(35 85% 55% / 0.3);
+    --shadow-soft: 0 4px 20px hsla(142 72% 10% / 0.4), 0 0 10px hsla(142 72% 10% / 0.2);
+    --shadow-card: 0 8px 30px hsla(142 72% 8% / 0.5), 0 0 20px hsla(142 72% 8% / 0.3);
+    --shadow-elevated: 0 20px 60px hsla(142 72% 5% / 0.6), 0 0 40px hsla(142 72% 5% / 0.4);
+    --shadow-glow: 0 0 60px hsla(142 75% 55% / 0.4), 0 0 120px hsla(142 75% 55% / 0.2), 0 0 180px hsla(35 85% 55% / 0.1);
+    --shadow-gold-glow: 0 0 50px hsla(35 85% 55% / 0.5), 0 0 100px hsla(35 85% 55% / 0.3), 0 0 150px hsla(32 90% 50% / 0.2);
+    --shadow-bright: 0 0 30px hsla(142 75% 55% / 0.4), 0 0 60px hsla(142 75% 55% / 0.3), 0 0 90px hsla(35 85% 55% / 0.2);
   }
 }
 

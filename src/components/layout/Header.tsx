@@ -228,7 +228,7 @@ export default function Header() {
               initial={{ opacity: 0, y: 20, scale: 0.95 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 10, scale: 0.95 }}
-              className="fixed rounded-3xl shadow-2xl border border-white/20 overflow-hidden z-[1001] bg-white/90 dark:bg-gray-900/90 backdrop-blur-3xl"
+              className="fixed rounded-3xl shadow-2xl border border-white/20 overflow-hidden z-[1001] bg-white/90 dark:bg-card/90 backdrop-blur-3xl"
               style={{
                 left: `${dropdownPosition.left - 100}px`,
                 top: `${dropdownPosition.top + 20}px`,
@@ -288,7 +288,7 @@ export default function Header() {
             initial={{ opacity: 0, scale: 0.95, y: -20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: -20 }}
-            className="fixed top-24 left-4 right-4 bg-white/90 dark:bg-gray-900/90 backdrop-blur-3xl rounded-[2.5rem] border border-white/20 shadow-2xl overflow-hidden z-[1002] pointer-events-auto"
+            className="fixed top-24 left-4 right-4 bg-white/90 dark:bg-card/90 backdrop-blur-3xl rounded-[2.5rem] border border-white/20 shadow-2xl overflow-hidden z-[1002] pointer-events-auto"
           >
             <div className="p-6 flex flex-col gap-2">
               {navItems.map((item, index) => (
@@ -318,7 +318,7 @@ export default function Header() {
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                     onClick={toggleTheme}
-                    className="p-2.5 rounded-xl bg-white dark:bg-gray-800 text-jungle shadow-md border border-jungle/10"
+                    className="p-2.5 rounded-xl bg-white dark:bg-secondary text-jungle shadow-md border border-jungle/10"
                   >
                     {theme === 'light' ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
                   </motion.button>

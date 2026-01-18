@@ -59,7 +59,7 @@ function StatItem({ icon, value, label, delay }: StatItemProps) {
           <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-jungle/10 mb-3 group-hover:bg-jungle/20 transition-colors">
             {icon}
           </div>
-          <div className="text-2xl md:text-3xl font-heading font-bold text-jungle mb-1">
+          <div className="text-2xl md:text-3xl font-heading font-bold text-primary mb-1">
             <AnimatedCounter value={value} />
           </div>
           <p className="text-muted-foreground text-xs uppercase tracking-wider font-medium">{label}</p>
@@ -76,22 +76,22 @@ export default function StatsSection() {
 
   const stats = [
     {
-      icon: <MapPin className="w-8 h-8 text-jungle" />,
+      icon: <MapPin className="w-8 h-8 text-primary" />,
       value: tawaStats.protectedArea,
       label: t('stats.protectedArea'),
     },
     {
-      icon: <Leaf className="w-8 h-8 text-jungle" />,
+      icon: <Leaf className="w-8 h-8 text-primary" />,
       value: tawaStats.wildlifeSpecies,
       label: t('stats.wildlifeSpecies'),
     },
     {
-      icon: <Users className="w-8 h-8 text-jungle" />,
+      icon: <Users className="w-8 h-8 text-primary" />,
       value: tawaStats.annualVisitors,
       label: t('stats.annualVisitors'),
     },
     {
-      icon: <Award className="w-8 h-8 text-jungle" />,
+      icon: <Award className="w-8 h-8 text-primary" />,
       value: tawaStats.conservationProjects,
       label: t('stats.conservationProjects'),
     },
@@ -127,7 +127,7 @@ export default function StatsSection() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="mb-8"
             >
-              <span className="inline-block px-4 py-1 bg-jungle/10 text-jungle rounded-full text-sm font-medium mb-4">
+              <span className="inline-block px-4 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
                 Our Impact
               </span>
               <div className="mb-2">
@@ -194,17 +194,17 @@ export default function StatsSection() {
                   >
                     <div className="flex items-start justify-between gap-4 mb-3">
                       <div className="flex items-center gap-2 text-muted-foreground text-sm">
-                        <Calendar className="w-4 h-4 text-jungle" />
+                        <Calendar className="w-4 h-4 text-primary" />
                         <span className="font-medium">{formatDate(news.date)}</span>
                       </div>
                     </div>
-                    <h3 className="text-lg font-heading font-semibold text-foreground mb-2 group-hover:text-jungle transition-colors line-clamp-2">
+                    <h3 className="text-lg font-heading font-semibold text-foreground mb-2 group-hover:text-primary transition-colors line-clamp-2">
                       {news.title}
                     </h3>
                     <p className="text-muted-foreground text-sm mb-3 line-clamp-2">
                       {news.excerpt}
                     </p>
-                    <div className="flex items-center gap-2 text-jungle text-sm font-medium">
+                    <div className="flex items-center gap-2 text-primary text-sm font-medium">
                       {t('news.viewAll')}
                       <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </div>
@@ -221,7 +221,7 @@ export default function StatsSection() {
             >
               <Link
                 to="/news"
-                className="group inline-flex items-center gap-2 px-6 py-3 border-2 border-jungle text-jungle font-semibold rounded-full hover:bg-jungle hover:text-white transition-all duration-300"
+                className="group inline-flex items-center gap-2 px-6 py-3 border-2 border-primary text-primary font-semibold rounded-full hover:bg-primary hover:text-white transition-all duration-300"
               >
                 {t('news.viewAll')}
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

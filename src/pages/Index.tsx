@@ -14,7 +14,7 @@ const Index = () => {
       <AboutSection />
       <DestinationsSection />
       <TestimonialsSection />
-      <div className="w-full bg-background/80 backdrop-blur-sm relative">
+      <div className="w-full relative">
         <div className="container mx-auto px-4 py-12 md:py-16 lg:py-20">
           <ToursSection />
         </div>
