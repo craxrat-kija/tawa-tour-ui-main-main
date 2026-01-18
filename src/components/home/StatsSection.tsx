@@ -56,14 +56,10 @@ function StatItem({ icon, value, label, delay }: StatItemProps) {
     >
       <div className="relative bg-card rounded-2xl p-6 border border-jungle/10 hover:border-jungle/30 transition-all duration-300 shadow-soft hover:shadow-card overflow-hidden">
         <div className="relative z-10 text-center">
-          <motion.div
-            whileHover={{ rotate: 360, scale: 1.1 }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-jungle/10 mb-4 group-hover:bg-jungle/20 transition-colors"
-          >
+          <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-jungle/10 mb-3 group-hover:bg-jungle/20 transition-colors">
             {icon}
-          </motion.div>
-          <div className="text-3xl md:text-4xl font-heading font-bold text-jungle mb-2">
+          </div>
+          <div className="text-2xl md:text-3xl font-heading font-bold text-jungle mb-1">
             <AnimatedCounter value={value} />
           </div>
           <p className="text-muted-foreground text-xs uppercase tracking-wider font-medium">{label}</p>
@@ -79,24 +75,24 @@ export default function StatsSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const stats = [
-    { 
-      icon: <MapPin className="w-8 h-8 text-jungle" />, 
-      value: tawaStats.protectedArea, 
+    {
+      icon: <MapPin className="w-8 h-8 text-jungle" />,
+      value: tawaStats.protectedArea,
       label: t('stats.protectedArea'),
     },
-    { 
-      icon: <Leaf className="w-8 h-8 text-jungle" />, 
-      value: tawaStats.wildlifeSpecies, 
+    {
+      icon: <Leaf className="w-8 h-8 text-jungle" />,
+      value: tawaStats.wildlifeSpecies,
       label: t('stats.wildlifeSpecies'),
     },
-    { 
-      icon: <Users className="w-8 h-8 text-jungle" />, 
-      value: tawaStats.annualVisitors, 
+    {
+      icon: <Users className="w-8 h-8 text-jungle" />,
+      value: tawaStats.annualVisitors,
       label: t('stats.annualVisitors'),
     },
-    { 
-      icon: <Award className="w-8 h-8 text-jungle" />, 
-      value: tawaStats.conservationProjects, 
+    {
+      icon: <Award className="w-8 h-8 text-jungle" />,
+      value: tawaStats.conservationProjects,
       label: t('stats.conservationProjects'),
     },
   ];
@@ -134,15 +130,10 @@ export default function StatsSection() {
               <span className="inline-block px-4 py-1 bg-jungle/10 text-jungle rounded-full text-sm font-medium mb-4">
                 Our Impact
               </span>
-              <div className="min-h-[2.5rem] md:min-h-[3rem] mb-2">
-                <Typewriter
-                  text="Conservation by Numbers"
-                  speed={80}
-                  delay={200}
-                  className="text-3xl md:text-4xl font-heading font-bold text-foreground"
-                  tag="h2"
-                  showCursor={true}
-                />
+              <div className="mb-2">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-foreground">
+                  Conservation by Numbers
+                </h2>
               </div>
               <p className="text-muted-foreground">
                 Measurable impact in protecting Tanzania's wildlife heritage
@@ -177,15 +168,10 @@ export default function StatsSection() {
               <span className="inline-block px-4 py-1 bg-jungle-yellow/10 text-jungle-yellow rounded-full text-sm font-medium mb-4">
                 {t('stats.stayUpdated')}
               </span>
-              <div className="min-h-[2.5rem] md:min-h-[3rem] mb-2">
-                <Typewriter
-                  text={t('stats.latestNews')}
-                  speed={60}
-                  delay={300}
-                  className="text-3xl md:text-4xl font-heading font-bold"
-                  tag="h2"
-                  showCursor={true}
-                />
+              <div className="mb-2">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-foreground">
+                  {t('stats.latestNews')}
+                </h2>
               </div>
               <p className="text-muted-foreground">
                 {t('stats.description')}

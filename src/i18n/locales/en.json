@@ -6,7 +6,8 @@
     "news": "News",
     "events": "Events",
     "investments": "Investments",
-    "contact": "Contact"
+    "contact": "Contact",
+    "gallery": "Gallery"
   },
   "hero": {
     "title1": "Tanzania Wildlife",
@@ -27,7 +28,9 @@
     "exploreReserves": "Explore Game Reserves",
     "experienceNature": "Experience Nature",
     "protectHeritage": "Protect Heritage",
-    "exploreMore": "Explore More"
+    "exploreMore": "Explore More",
+    "wildlifeGallery": "Wildlife Gallery",
+    "viewOurGallery": "View our spectacular wildlife collection"
   },
   "stats": {
     "protectedArea": "Protected Area",
@@ -179,4 +182,3 @@
     "rights": "All rights reserved."
   }
 }
-
