@@ -1,7 +1,7 @@
-import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin, Facebook, Twitter, Instagram, Youtube, ArrowRight, Send, Leaf, Shield } from 'lucide-react';
+import { Mail, Phone, MapPin, Facebook, Twitter, Instagram, Youtube, ArrowRight, Send, Leaf } from 'lucide-react';
 import tawaLogo from '@/assets/tawa-logo.png';
+import heroWildlife from '@/assets/hero-wildlife.jpg';
 
 const quickLinks = [
   { name: 'About TAWA', path: '/about' },
@@ -25,243 +25,155 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="relative bg-gradient-to-b from-jungle-dark via-jungle-dark to-jungle-dark/95 text-cream overflow-hidden">
-      {/* Background decorative elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-jungle-yellow/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-jungle/5 rounded-full blur-3xl" />
+    <footer className="relative bg-jungle-dark text-white pt-16 pb-10 overflow-hidden font-body text-left">
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src={heroWildlife}
+          alt="Wildlife Background"
+          className="w-full h-full object-cover opacity-80"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-jungle-dark/90 via-jungle-dark/80 to-jungle-dark/60" />
       </div>
 
-      <div className="container-safari section-padding relative z-10">
-        {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-12">
-          {/* Brand Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="space-y-6"
-          >
-            <div className="flex items-center gap-3">
-              <motion.div
-                whileHover={{ scale: 1.1, rotate: 5 }}
-                transition={{ duration: 0.3 }}
-                className="w-16 h-16 rounded-full overflow-hidden border-2 border-jungle-yellow/30 hover:border-jungle-yellow transition-colors duration-300"
-              >
-                <img src={tawaLogo} alt="TAWA Logo" className="w-full h-full object-cover" />
-              </motion.div>
-              <div>
-                <h3 className="text-xl font-heading font-bold text-white">TAWA</h3>
-                <p className="text-sm text-cream/70">Wildlife Authority</p>
+      {/* Subtle Dot Pattern */}
+      <div className="absolute inset-0 opacity-[0.05] pointer-events-none z-1"
+        style={{ backgroundImage: 'radial-gradient(rgba(255,255,255,0.2) 1px, transparent 0)', backgroundSize: '30px 30px' }}>
+      </div>
+
+      <div className="container-safari relative z-10 px-6 lg:px-12">
+        <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 mb-20 text-left">
+
+          {/* Left Side: Brand Presence (50%) */}
+          <div className="lg:w-[50%] space-y-6">
+            <Link to="/" className="flex items-center gap-4 group w-fit">
+              <div className="w-12 h-12 bg-white rounded-xl p-2.5 shadow-xl group-hover:scale-105 transition-transform duration-500">
+                <img src={tawaLogo} alt="TAWA Logo" className="w-full h-full object-contain" />
               </div>
-            </div>
-            <p className="text-cream/80 text-sm leading-relaxed">
-              Tanzania Wildlife Management Authority - Protecting and conserving Tanzania's 
-              rich wildlife heritage for future generations.
+              <div className="flex flex-col">
+                <span className="text-2xl font-heading font-black tracking-tighter text-white">TAWA</span>
+                <span className="text-[9px] uppercase tracking-[0.4em] text-jungle-yellow font-black">Wildlife Authority</span>
+              </div>
+            </Link>
+
+            <h3 className="text-xl md:text-3xl font-heading font-bold leading-tight max-w-lg text-white drop-shadow-lg">
+              Sustainably protecting Tanzania's wildlife heritage for generations.
+            </h3>
+
+            <p className="text-white leading-relaxed text-base max-w-lg font-medium drop-shadow-md">
+              Tanzania Wildlife Management Authority (TAWA) is an autonomous public institution responsible for the protection and sustainable management of wildlife resources.
             </p>
-            
-            {/* Social Media */}
-            <div className="flex gap-3">
-              {socialLinks.map((social, index) => (
-                <motion.a
+
+            <div className="flex gap-4 pt-4">
+              {socialLinks.map((social) => (
+                <a
                   key={social.label}
                   href={social.href}
-                  initial={{ opacity: 0, scale: 0 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.3, delay: index * 0.1 }}
-                  whileHover={{ scale: 1.15, y: -3 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="p-3 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-jungle-yellow hover:border-jungle-yellow hover:text-jungle-dark transition-all duration-300 group"
+                  className="w-12 h-12 flex items-center justify-center rounded-xl bg-white/5 border border-white/10 text-white/50 hover:bg-jungle-yellow hover:text-jungle-dark hover:-translate-y-1 transition-all duration-300 backdrop-blur-md"
                   aria-label={social.label}
                 >
-                  <social.icon className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
-                </motion.a>
+                  <social.icon className="w-5 h-5" />
+                </a>
               ))}
             </div>
-          </motion.div>
+          </div>
 
-          {/* Quick Links */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-          >
-            <h4 className="text-lg font-heading font-semibold mb-6 text-white flex items-center gap-2">
-              <ArrowRight className="w-4 h-4 text-jungle-yellow" />
-              Quick Links
-            </h4>
-            <ul className="space-y-3">
-              {quickLinks.map((link, index) => (
-                <motion.li
-                  key={link.path}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: 0.2 + index * 0.1 }}
-                >
-                  <Link 
-                    to={link.path}
-                    className="group flex items-center gap-2 text-cream/80 hover:text-jungle-yellow transition-all duration-300"
-                  >
-                    <span className="w-0 group-hover:w-2 h-0.5 bg-jungle-yellow transition-all duration-300" />
-                    <span className="group-hover:translate-x-1 transition-transform duration-300">
-                      {link.name}
-                    </span>
-                  </Link>
-                </motion.li>
-              ))}
-            </ul>
-          </motion.div>
-
-          {/* Destinations */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <h4 className="text-lg font-heading font-semibold mb-6 text-white flex items-center gap-2">
-              <MapPin className="w-4 h-4 text-jungle-yellow" />
-              Destinations
-            </h4>
-            <ul className="space-y-3">
-              {destinations.map((dest, index) => (
-                <motion.li
-                  key={dest.path}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
-                >
-                  <Link 
-                    to={dest.path}
-                    className="group flex items-center gap-2 text-cream/80 hover:text-jungle-yellow transition-all duration-300"
-                  >
-                    <span className="w-0 group-hover:w-2 h-0.5 bg-jungle-yellow transition-all duration-300" />
-                    <span className="group-hover:translate-x-1 transition-transform duration-300">
-                      {dest.name}
-                    </span>
-                  </Link>
-                </motion.li>
-              ))}
-            </ul>
-          </motion.div>
-
-          {/* Contact & Newsletter */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="space-y-6"
-          >
+          {/* Right Side: Link Grid (45%) */}
+          <div className="lg:w-[45%] grid grid-cols-2 gap-12 pt-8">
             <div>
-              <h4 className="text-lg font-heading font-semibold mb-6 text-white flex items-center gap-2">
-                <Mail className="w-4 h-4 text-jungle-yellow" />
-                Contact Us
+              <h4 className="text-xs font-heading font-black text-jungle-yellow uppercase tracking-[0.2em] mb-8">
+                Explore
               </h4>
               <ul className="space-y-4">
-                <motion.li
-                  whileHover={{ x: 5 }}
-                  className="flex items-start gap-3 group"
-                >
-                  <div className="p-2 rounded-lg bg-jungle-yellow/10 group-hover:bg-jungle-yellow/20 transition-colors">
-                    <MapPin className="w-4 h-4 text-jungle-yellow" />
-                  </div>
-                  <span className="text-cream/80 text-sm leading-relaxed">
-                    Morogoro Road, P.O. Box 1519<br />
-                    Dodoma, Tanzania
-                  </span>
-                </motion.li>
-                <motion.li
-                  whileHover={{ x: 5 }}
-                  className="flex items-center gap-3 group"
-                >
-                  <div className="p-2 rounded-lg bg-jungle-yellow/10 group-hover:bg-jungle-yellow/20 transition-colors">
-                    <Phone className="w-4 h-4 text-jungle-yellow" />
-                  </div>
-                  <a href="tel:+255262321222" className="text-cream/80 hover:text-jungle-yellow text-sm transition-colors">
-                    +255 26 232 1222
-                  </a>
-                </motion.li>
-                <motion.li
-                  whileHover={{ x: 5 }}
-                  className="flex items-center gap-3 group"
-                >
-                  <div className="p-2 rounded-lg bg-jungle-yellow/10 group-hover:bg-jungle-yellow/20 transition-colors">
-                    <Mail className="w-4 h-4 text-jungle-yellow" />
-                  </div>
-                  <a href="mailto:info@tawa.go.tz" className="text-cream/80 hover:text-jungle-yellow text-sm transition-colors">
-                    info@tawa.go.tz
-                  </a>
-                </motion.li>
+                {quickLinks.map((link) => (
+                  <li key={link.name}>
+                    <Link
+                      to={link.path}
+                      className="text-white/60 hover:text-white text-base transition-all duration-300 flex items-center group gap-0 hover:gap-3"
+                    >
+                      <span className="w-0 group-hover:w-4 overflow-hidden transition-all duration-300 text-jungle-yellow">
+                        <ArrowRight className="w-4 h-4" />
+                      </span>
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
 
-            {/* Newsletter */}
-            <div className="pt-4 border-t border-white/10">
-              <h5 className="text-sm font-semibold mb-3 text-white">Stay Updated</h5>
-              <form className="flex gap-2">
-                <input
-                  type="email"
-                  placeholder="Your email"
-                  className="flex-1 px-4 py-2.5 bg-white/5 border border-white/10 rounded-lg text-white placeholder-cream/50 text-sm focus:outline-none focus:border-jungle-yellow transition-colors"
-                />
-                <motion.button
-                  type="submit"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="p-2.5 bg-jungle-yellow text-jungle-dark rounded-lg hover:bg-jungle-yellow-light transition-colors"
-                  aria-label="Subscribe"
-                >
-                  <Send className="w-5 h-5" />
-                </motion.button>
-              </form>
+            <div>
+              <h4 className="text-xs font-heading font-black text-jungle-yellow uppercase tracking-[0.2em] mb-8">
+                Destinations
+              </h4>
+              <ul className="space-y-4">
+                {destinations.map((dest) => (
+                  <li key={dest.name}>
+                    <Link
+                      to={dest.path}
+                      className="text-white/60 hover:text-white text-base transition-all duration-300 flex items-center group gap-0 hover:gap-3"
+                    >
+                      <span className="w-0 group-hover:w-4 overflow-hidden transition-all duration-300 text-jungle-yellow">
+                        <ArrowRight className="w-4 h-4" />
+                      </span>
+                      {dest.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
-          </motion.div>
+          </div>
+        </div>
+
+        {/* Contact & Newsletter Bar - Compact */}
+        <div className="bg-white/[0.05] border border-white/20 rounded-3xl p-6 md:p-8 mb-12 backdrop-blur-2xl">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 items-center">
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 rounded-xl bg-jungle-yellow/30 flex items-center justify-center shrink-0 border border-white/20">
+                <MapPin className="w-5 h-5 text-white" />
+              </div>
+              <div className="text-left">
+                <span className="block text-white/50 uppercase tracking-[0.2em] text-[9px] font-black mb-1">Headquarters</span>
+                <span className="text-white text-xs font-bold leading-snug">Morogoro Road, P.O. Box 1519, Dodoma</span>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 rounded-xl bg-jungle-yellow/30 flex items-center justify-center shrink-0 border border-white/20">
+                <Phone className="w-5 h-5 text-white" />
+              </div>
+              <div className="text-left">
+                <span className="block text-white/50 uppercase tracking-[0.2em] text-[9px] font-black mb-1">Office Line</span>
+                <a href="tel:+255262321222" className="text-white text-sm font-black hover:text-jungle-yellow transition-colors drop-shadow-sm">+255 26 232 1222</a>
+              </div>
+            </div>
+
+            <div className="relative group">
+              <input
+                type="email"
+                placeholder="Subscribe to newsletter"
+                className="w-full bg-white/10 border border-white/20 rounded-2xl px-5 py-4 text-xs text-white placeholder:text-white/40 focus:outline-none focus:border-jungle-yellow transition-all pr-14 font-bold"
+              />
+              <button className="absolute right-2 top-2 bottom-2 aspect-square flex items-center justify-center rounded-xl bg-jungle-yellow text-jungle-dark hover:scale-105 active:scale-95 transition-all shadow-lg">
+                <Send className="w-3.5 h-3.5" />
+              </button>
+            </div>
+          </div>
         </div>
 
         {/* Bottom Bar */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="pt-8 border-t border-white/10"
-        >
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6">
-              <p className="text-cream/60 text-sm text-center md:text-left">
-                © {new Date().getFullYear()} Tanzania Wildlife Management Authority. All rights reserved.
-              </p>
-              <div className="flex items-center gap-2 text-cream/40">
-                <Leaf className="w-4 h-4" />
-                <span className="text-xs">Protecting Wildlife Since 1991</span>
-              </div>
-            </div>
-            <div className="flex gap-6">
-              <motion.a
-                href="#"
-                whileHover={{ y: -2 }}
-                className="text-cream/60 hover:text-jungle-yellow text-sm transition-colors relative group"
-              >
-                Privacy Policy
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-jungle-yellow group-hover:w-full transition-all duration-300" />
-              </motion.a>
-              <motion.a
-                href="#"
-                whileHover={{ y: -2 }}
-                className="text-cream/60 hover:text-jungle-yellow text-sm transition-colors relative group"
-              >
-                Terms of Service
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-jungle-yellow group-hover:w-full transition-all duration-300" />
-              </motion.a>
+        <div className="flex flex-col md:flex-row justify-between items-center gap-8 pt-10 border-t border-white/10">
+          <p className="text-white/30 text-[10px] font-black uppercase tracking-[0.3em]">
+            © {new Date().getFullYear()} Tanzania Wildlife Management Authority
+          </p>
+          <div className="flex gap-10">
+            <Link to="/privacy" className="text-white/30 hover:text-white text-[10px] font-black uppercase tracking-[0.3em] transition-colors">Privacy</Link>
+            <Link to="/terms" className="text-white/30 hover:text-white text-[10px] font-black uppercase tracking-[0.3em] transition-colors">Terms</Link>
+            <div className="hidden sm:flex items-center gap-2 text-jungle-yellow/40 text-[10px] font-black uppercase tracking-[0.3em]">
+              <Leaf className="w-3 h-3" />
+              <span>Conservation Excellence</span>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </footer>
   );

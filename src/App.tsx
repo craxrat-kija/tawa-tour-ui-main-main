@@ -16,6 +16,7 @@ import Events from "./pages/Events";
 import EventDetail from "./pages/EventDetail";
 import Contact from "./pages/Contact";
 import Investments from "./pages/Investments";
+import Gallery from "./pages/Gallery";
 
 const queryClient = new QueryClient();
 
@@ -44,6 +45,7 @@ const App = () => (
               <Route path="/events/:id" element={<EventDetail />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/investments" element={<Investments />} />
+              <Route path="/gallery" element={<Gallery />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </BrowserRouter>

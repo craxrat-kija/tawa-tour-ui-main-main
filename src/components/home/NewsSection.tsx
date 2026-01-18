@@ -27,7 +27,7 @@ export default function NewsSection() {
     <section className="section-padding bg-muted/30 relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-0 w-96 h-96 bg-jungle-yellow/5 rounded-full blur-3xl" />
+        <div className="absolute top-1/4 left-0 w-96 h-96 bg-jungle/5 rounded-full blur-3xl" />
         <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-jungle-teal/5 rounded-full blur-3xl" />
       </div>
 
@@ -40,7 +40,7 @@ export default function NewsSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-4 py-1 bg-jungle-yellow/10 text-jungle-yellow rounded-full text-sm font-medium mb-4">
+          <span className="inline-block px-4 py-1 bg-jungle/10 text-jungle rounded-full text-sm font-medium mb-4">
             Stay Updated
           </span>
           <div className="min-h-[3rem] md:min-h-[4rem] mb-4">
@@ -54,7 +54,7 @@ export default function NewsSection() {
             />
           </div>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-            Explore more stories and updates from our wildlife conservation efforts 
+            Explore more stories and updates from our wildlife conservation efforts
             across Tanzania's protected areas.
           </p>
         </motion.div>
@@ -66,8 +66,8 @@ export default function NewsSection() {
               key={news.id}
               initial={{ opacity: 0, y: 40, scale: 0.95 }}
               animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
-              transition={{ 
-                duration: 0.6, 
+              transition={{
+                duration: 0.6,
                 delay: index * 0.15,
                 type: "spring",
                 stiffness: 100
@@ -77,13 +77,13 @@ export default function NewsSection() {
             >
               <Link
                 to="/news"
-                className="block h-full bg-card rounded-3xl p-6 border border-jungle-yellow/10 hover:border-jungle-yellow/30 transition-all duration-500 shadow-soft hover:shadow-elevated"
+                className="block h-full bg-card rounded-3xl p-6 border border-jungle/10 hover:border-jungle/30 transition-all duration-500 shadow-soft hover:shadow-elevated"
               >
                 {/* Header */}
                 <div className="flex items-start justify-between gap-4 mb-4">
                   <div className="flex items-center gap-2 text-muted-foreground text-sm">
-                    <div className="p-2 bg-jungle-yellow/10 rounded-lg">
-                      <Calendar className="w-4 h-4 text-jungle-yellow" />
+                    <div className="p-2 bg-jungle/10 rounded-lg">
+                      <Calendar className="w-4 h-4 text-jungle" />
                     </div>
                     <span className="font-medium">{formatDate(news.date)}</span>
                   </div>
@@ -95,21 +95,21 @@ export default function NewsSection() {
                     </span>
                   )}
                 </div>
-                
+
                 {/* Content */}
-                <h3 className="text-xl font-heading font-semibold text-foreground mb-3 group-hover:text-jungle-yellow transition-colors line-clamp-2">
+                <h3 className="text-xl font-heading font-semibold text-foreground mb-3 group-hover:text-jungle transition-colors line-clamp-2">
                   {news.title}
                 </h3>
-                
+
                 <p className="text-muted-foreground text-sm mb-5 line-clamp-3 leading-relaxed">
                   {news.excerpt}
                 </p>
-                
+
                 {/* Footer */}
-                <div className="flex items-center justify-between pt-4 border-t border-jungle-yellow/10">
+                <div className="flex items-center justify-between pt-4 border-t border-jungle/10">
                   <span className="text-xs text-muted-foreground">Read article</span>
                   <motion.span
-                    className="inline-flex items-center gap-2 text-jungle-yellow font-semibold text-sm"
+                    className="inline-flex items-center gap-2 text-jungle font-semibold text-sm"
                     whileHover={{ x: 5 }}
                   >
                     Read More
@@ -130,7 +130,7 @@ export default function NewsSection() {
         >
           <Link
             to="/news"
-            className="group inline-flex items-center gap-2 px-8 py-4 bg-jungle-yellow text-jungle-dark font-semibold rounded-full hover:bg-jungle-yellow-light transition-all duration-300 hover:shadow-glow hover:-translate-y-1 hover:scale-105"
+            className="group inline-flex items-center gap-2 px-8 py-4 bg-jungle text-white font-semibold rounded-full hover:bg-jungle-dark transition-all duration-300 hover:shadow-glow hover:-translate-y-1 hover:scale-105"
           >
             View All News
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

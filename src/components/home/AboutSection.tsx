@@ -8,29 +8,29 @@ const features = [
   {
     icon: Shield,
     title: 'Wildlife Protection',
-    description: 'Advanced anti-poaching measures and patrol systems protect endangered species across all reserves.',
-    color: 'from-jungle-yellow/20 to-jungle-yellow/5',
-    iconColor: 'text-jungle-yellow',
+    description: 'Advanced anti-poaching measures protecting endangered species.',
+    color: 'from-jungle/10 to-transparent',
+    iconColor: 'text-jungle',
   },
   {
     icon: Leaf,
     title: 'Ecosystem Conservation',
-    description: 'Sustainable management practices preserve natural habitats and biodiversity for future generations.',
-    color: 'from-jungle-teal/20 to-jungle-teal/5',
+    description: 'Preserving natural habitats and biodiversity for the future.',
+    color: 'from-jungle-teal/10 to-transparent',
     iconColor: 'text-jungle-teal',
   },
   {
     icon: Heart,
     title: 'Community Engagement',
-    description: 'Partnering with local communities to create economic opportunities through conservation tourism.',
-    color: 'from-jungle-yellow/20 to-jungle-yellow/5',
-    iconColor: 'text-jungle-yellow',
+    description: 'Creating local economic opportunities through tourism.',
+    color: 'from-jungle/10 to-transparent',
+    iconColor: 'text-jungle',
   },
   {
     icon: Globe,
     title: 'Global Partnerships',
-    description: 'Collaborating with international organizations to implement world-class conservation standards.',
-    color: 'from-jungle-teal/20 to-jungle-teal/5',
+    description: 'Implementing world-class conservation standards globally.',
+    color: 'from-jungle-teal/10 to-transparent',
     iconColor: 'text-jungle-teal',
   },
 ];
@@ -44,7 +44,7 @@ export default function AboutSection() {
     <section className="section-padding bg-background overflow-hidden relative">
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-jungle-yellow/5 rounded-full blur-3xl" />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-jungle/5 rounded-full blur-3xl" />
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-jungle-teal/5 rounded-full blur-3xl" />
       </div>
 
@@ -62,19 +62,14 @@ export default function AboutSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="inline-block px-4 py-1 bg-jungle-yellow/10 text-jungle-yellow rounded-full text-sm font-medium mb-6"
+              className="inline-block px-4 py-1 bg-jungle/10 text-jungle rounded-full text-sm font-medium mb-6"
             >
               {t('about.mission')}
             </motion.span>
-            <div className="text-3xl md:text-5xl font-heading font-bold text-foreground mb-6 min-h-[3rem] md:min-h-[4rem]">
-              <Typewriter
-                text={t('about.title')}
-                speed={70}
-                delay={300}
-                className="text-foreground"
-                tag="h2"
-                showCursor={true}
-              />
+            <div className="mb-4">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-foreground">
+                {t('about.title')}
+              </h2>
             </div>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -90,8 +85,8 @@ export default function AboutSection() {
               transition={{ duration: 0.6, delay: 0.5 }}
               className="text-muted-foreground mb-8 leading-relaxed text-lg"
             >
-              Through innovative conservation strategies, community partnerships, and eco-tourism 
-              initiatives, we ensure that Tanzania's magnificent wildlife thrives while contributing 
+              Through innovative conservation strategies, community partnerships, and eco-tourism
+              initiatives, we ensure that Tanzania's magnificent wildlife thrives while contributing
               to national development and local livelihoods.
             </motion.p>
 
@@ -104,14 +99,14 @@ export default function AboutSection() {
                   animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
                   transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
                   whileHover={{ scale: 1.05, y: -5 }}
-                  className={`group relative bg-gradient-to-br ${feature.color} rounded-2xl p-5 border border-jungle-yellow/10 hover:border-jungle-yellow/30 transition-all duration-300 cursor-pointer`}
+                  className={`group relative bg-gradient-to-br ${feature.color} rounded-2xl p-5 border border-jungle/10 hover:border-jungle/30 transition-all duration-300 cursor-pointer`}
                 >
                   <div className="flex gap-4 items-start">
-                    <div className={`flex-shrink-0 w-14 h-14 rounded-xl bg-jungle-dark/20 backdrop-blur-sm flex items-center justify-center group-hover:bg-jungle-dark/40 transition-colors`}>
-                      <feature.icon className={`w-7 h-7 ${feature.iconColor}`} />
+                    <div className={`flex-shrink-0 w-12 h-12 rounded-xl bg-jungle-dark/20 backdrop-blur-sm flex items-center justify-center group-hover:bg-jungle-dark/40 transition-colors`}>
+                      <feature.icon className={`w-6 h-6 ${feature.iconColor}`} />
                     </div>
                     <div className="flex-1">
-                      <h3 className="font-semibold text-foreground mb-2 group-hover:text-jungle-yellow transition-colors">
+                      <h3 className="font-semibold text-foreground mb-2 group-hover:text-jungle transition-colors">
                         {feature.title}
                       </h3>
                       <p className="text-muted-foreground text-sm leading-relaxed">
@@ -136,29 +131,29 @@ export default function AboutSection() {
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                className="absolute inset-0 rounded-full border-2 border-jungle-yellow/20"
+                className="absolute inset-0 rounded-full border-2 border-jungle/20"
               />
               <motion.div
                 animate={{ rotate: -360 }}
                 transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
                 className="absolute inset-8 rounded-full border-2 border-jungle-teal/20"
               />
-              
+
               {/* Center content card */}
               <motion.div
                 whileHover={{ scale: 1.05 }}
-                className="absolute inset-16 rounded-3xl bg-gradient-to-br from-jungle-dark to-jungle-dark/80 border border-jungle-yellow/20 flex items-center justify-center shadow-elevated"
+                className="absolute inset-16 rounded-3xl bg-gradient-to-br from-jungle-dark to-jungle-dark/80 border border-jungle/20 flex items-center justify-center shadow-elevated"
               >
                 <div className="text-center text-cream p-8">
                   <motion.div
                     initial={{ scale: 0 }}
                     animate={isInView ? { scale: 1 } : {}}
                     transition={{ duration: 0.6, delay: 0.8, type: "spring" }}
-                    className="text-6xl font-heading font-bold text-jungle-yellow mb-2"
+                    className="text-6xl font-heading font-bold text-white mb-2"
                   >
                     30+
                   </motion.div>
-                  <div className="text-sm uppercase tracking-wider">Years of<br/>Conservation</div>
+                  <div className="text-sm uppercase tracking-wider text-white/90">Years of<br />Conservation</div>
                 </div>
               </motion.div>
 
@@ -167,12 +162,12 @@ export default function AboutSection() {
                 animate={{ y: [0, -15, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                 whileHover={{ scale: 1.1 }}
-                className="absolute top-8 right-8 bg-card px-5 py-3 rounded-2xl shadow-card border border-jungle-yellow/20 hover:border-jungle-yellow/40 transition-colors"
+                className="absolute top-8 right-8 bg-card px-5 py-3 rounded-2xl shadow-card border border-jungle/20 hover:border-jungle/40 transition-colors"
               >
-                <span className="text-jungle-yellow font-bold text-lg">170K+ km²</span>
+                <span className="text-jungle font-bold text-lg">170K+ km²</span>
                 <div className="text-xs text-muted-foreground mt-1">Protected</div>
               </motion.div>
-              
+
               <motion.div
                 animate={{ y: [0, 15, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}

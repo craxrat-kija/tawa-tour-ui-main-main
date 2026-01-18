@@ -12,7 +12,7 @@ export default function ToursSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   // Get featured tours from all destinations
-  const featuredTours = destinations.flatMap(d => 
+  const featuredTours = destinations.flatMap(d =>
     d.tours.slice(0, 1).map(t => ({ ...t, destination: d.name, destSlug: d.slug }))
   );
 
@@ -59,8 +59,8 @@ export default function ToursSection() {
               key={`${tour.destSlug}-${tour.id}-${index}`}
               initial={{ opacity: 0, y: 50, scale: 0.95 }}
               animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
-              transition={{ 
-                duration: 0.6, 
+              transition={{
+                duration: 0.6,
                 delay: index * 0.15,
                 type: "spring",
                 stiffness: 100
@@ -80,7 +80,7 @@ export default function ToursSection() {
                   <h3 className="text-xl font-heading font-semibold text-foreground mb-3 group-hover:text-jungle-yellow transition-colors line-clamp-2">
                     {tour.name}
                   </h3>
-                  
+
                   <p className="text-muted-foreground text-sm mb-5 line-clamp-2 leading-relaxed">
                     {tour.description}
                   </p>

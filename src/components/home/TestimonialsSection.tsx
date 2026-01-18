@@ -71,7 +71,7 @@ export default function TestimonialsSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section 
+    <section
       ref={ref}
       className="relative py-16 md:py-24 bg-gradient-to-br from-background via-jungle/5 to-jungle-yellow/5 overflow-hidden"
     >
@@ -104,7 +104,7 @@ export default function TestimonialsSection() {
             delay: 1
           }}
         />
-        
+
         {/* Shimmer effect */}
         <motion.div
           className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent"
@@ -155,7 +155,7 @@ export default function TestimonialsSection() {
               transition={{ duration: 0.8, delay: 0.3 }}
             />
           </motion.div>
-          
+
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -200,7 +200,7 @@ export default function TestimonialsSection() {
                 className="absolute -inset-0.5 bg-gradient-to-r from-jungle-yellow/30 via-jungle/30 to-jungle-yellow/30 rounded-2xl opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500 -z-10"
                 initial={false}
               />
-              
+
               <div className="relative bg-card/95 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-jungle/20 hover:border-jungle-yellow/40 transition-all duration-300 shadow-card hover:shadow-gold-glow h-full flex flex-col">
                 {/* Quote Icon */}
                 <motion.div

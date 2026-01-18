@@ -14,9 +14,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        heading: ['Poppins', 'Inter', 'sans-serif'],
+        heading: ['Urbanist', 'Inter', 'sans-serif'],
         body: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
-        display: ['Playfair Display', 'serif'],
+        display: ['Urbanist', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -141,13 +141,6 @@ export default {
         elevated: "var(--shadow-elevated)",
         glow: "var(--shadow-glow)",
         "gold-glow": "var(--shadow-gold-glow)",
-      },
-      backgroundImage: {
-        "gradient-jungle": "var(--gradient-jungle)",
-        "gradient-safari": "var(--gradient-safari)",
-        "gradient-gold": "var(--gradient-gold)",
-        "gradient-hero": "var(--gradient-hero)",
-        "gradient-shine": "var(--gradient-shine)",
       },
     },
   },
