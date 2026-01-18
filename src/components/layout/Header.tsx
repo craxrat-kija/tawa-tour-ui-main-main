@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useScroll } from 'framer-motion';
 import { Menu, X, Sun, Moon, ChevronDown, MapPin, Newspaper, Calendar, Briefcase, Info, ArrowRight } from 'lucide-react';
 import { useTheme } from '@/contexts/ThemeContext';
 import { useTranslation } from 'react-i18next';
@@ -12,14 +12,14 @@ import heroWildlifeImage from '@/assets/hero-wildlife.jpg';
 import LanguageSwitcher from './LanguageSwitcher';
 
 export default function Header() {
-  const [isScrolledState, setIsScrolledState] = useState(false);
+  const { scrollY } = useScroll();
+  const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
   const [dropdownPosition, setDropdownPosition] = useState<{ left: number; top: number } | null>(null);
   const { theme, toggleTheme } = useTheme();
   const { t } = useTranslation();
   const location = useLocation();
-  const isScrolled = true;
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const navItemRefs = useRef<Record<string, HTMLDivElement | null>>({});
 
@@ -34,7 +34,6 @@ export default function Header() {
     { name: t('nav.contact'), path: '/contact' },
   ];
 
-  // Dropdown content
   const dropdownContent: Record<string, Array<{ label: string; path: string; icon?: any; description?: string; image?: string }>> = {
     '/about': [
       { label: 'Our Mission', path: '/about#mission', icon: Info, description: 'Learn about our goals', image: heroWildlifeImage },
@@ -70,16 +69,13 @@ export default function Header() {
   };
 
   const handleMouseEnter = (path: string) => {
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-    }
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
     const navItem = navItemRefs.current[path];
     if (navItem) {
       const rect = navItem.getBoundingClientRect();
-      const headerHeight = 64; // h-16 = 64px
       setDropdownPosition({
         left: rect.left,
-        top: headerHeight + 8 // Position below header container with gap
+        top: 80 // Fixed depth for floating design
       });
     }
     setHoveredItem(path);
@@ -93,450 +89,232 @@ export default function Header() {
   };
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolledState(window.scrollY > 50);
-    };
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    return scrollY.onChange((latest) => {
+      setIsScrolled(latest > 50);
+    });
+  }, [scrollY]);
 
   useEffect(() => {
     setIsMobileMenuOpen(false);
   }, [location]);
 
-  useEffect(() => {
-    return () => {
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
-      }
-    };
-  }, []);
+  const headerVariants = {
+    visible: {
+      width: 'auto',
+      marginTop: '1.25rem',
+      borderRadius: '9999px',
+      paddingLeft: '2rem',
+      paddingRight: '2rem',
+      backgroundColor: '#15803d', // Solid Jungle Green for high visibility from the start
+      backdropFilter: 'blur(20px)',
+      boxShadow: '0 10px 40px -10px rgba(0,0,0,0.4), 0 0 20px rgba(34, 197, 94, 0.3)',
+      borderWidth: '1px',
+      borderColor: 'rgba(255, 255, 255, 0.25)'
+    }
+  };
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-[99999] transition-all duration-300 w-full ${isScrolled
-        ? 'bg-gray-900 shadow-lg border-b border-white/10'
-        : 'bg-transparent'
-        }`}
-      style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        right: 0,
-        width: '100%',
-        maxWidth: '100%',
-        backgroundColor: isScrolled ? '#111827' : 'transparent',
-        zIndex: 99999,
-        visibility: 'visible',
-        display: 'block',
-        transform: 'translateY(0)',
-        willChange: 'auto',
-        margin: 0,
-        padding: 0,
-        boxSizing: 'border-box',
-        backfaceVisibility: 'hidden',
-        WebkitBackfaceVisibility: 'hidden'
-      }}
-    >
-      <div className="container-safari w-full mx-auto relative px-4 lg:px-6">
-        <nav className="flex items-center justify-between h-16 w-full">
+    <div className="fixed top-0 left-0 right-0 z-[1000] flex justify-center pointer-events-none">
+      <motion.header
+        initial="visible"
+        animate="visible"
+        variants={headerVariants}
+        transition={{ type: "spring", stiffness: 200, damping: 25 }}
+        className="pointer-events-auto overflow-visible relative flex items-center h-16 md:h-20"
+      >
+        <div className="flex items-center justify-between gap-8 md:gap-12 min-w-max lg:min-w-[900px]">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 sm:gap-2.5 group">
+          <Link to="/" className="flex items-center gap-3 group">
             <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.98 }}
-              transition={{ type: "spring", stiffness: 400, damping: 17 }}
-              className="relative w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 rounded-full overflow-hidden border-2 transition-all duration-300"
-              style={{
-                borderColor: 'rgba(255, 255, 255, 0.5)'
-              }}
+              whileHover={{ scale: 1.1, rotate: 5 }}
+              whileTap={{ scale: 0.9 }}
+              className="relative w-10 h-10 md:w-12 md:h-12 rounded-2xl overflow-hidden border-2 border-white/40 shadow-lg transition-all duration-500 group-hover:border-jungle-yellow/50"
             >
               <img
                 src={tawaLogo}
                 alt="TAWA Logo"
                 className="w-full h-full object-cover"
               />
+              <div className="absolute inset-0 bg-gradient-to-tr from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
             </motion.div>
-            <div className="hidden sm:block">
-              <motion.h1
-                className={`text-lg sm:text-xl lg:text-2xl font-bold tracking-tight transition-colors duration-300 ${isScrolled
-                  ? 'text-white'
-                  : 'text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)]'
-                  }`}
-                style={{
-                  textShadow: isScrolled
-                    ? 'none'
-                    : '0 1px 3px rgba(0, 0, 0, 0.5)',
-                }}
-              >
+            <div className="flex flex-col">
+              <span className="text-xl font-heading font-black tracking-tighter leading-none mb-0.5 text-white">
                 TAWA
-              </motion.h1>
-              <motion.p
-                className={`text-[10px] sm:text-xs lg:text-sm font-semibold tracking-wide transition-colors duration-300 ${isScrolled
-                  ? 'text-white/90'
-                  : 'text-white/90 drop-shadow-[0_1px_2px_rgba(0,0,0,0.4)]'
-                  }`}
-                style={{
-                  textShadow: isScrolled
-                    ? 'none'
-                    : '0 1px 2px rgba(0, 0, 0, 0.4)',
-                }}
-              >
+              </span>
+              <span className="text-[10px] font-black uppercase tracking-[0.2em] leading-none opacity-80 text-white">
                 Wildlife Authority
-              </motion.p>
+              </span>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-6">
+          <nav className="hidden lg:flex items-center gap-2">
             {navItems.map((item, index) => {
               const isActive = location.pathname === item.path;
               const hasDropdown = item.hasDropdown && dropdownContent[item.path];
               const isHovered = hoveredItem === item.path;
 
               return (
-                <motion.div
+                <div
                   key={item.path}
-                  ref={(el) => {
-                    if (hasDropdown) {
-                      navItemRefs.current[item.path] = el;
-                    }
-                  }}
-                  initial={{ opacity: 0, y: -10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: index * 0.04, ease: "easeOut" }}
-                  className="relative"
+                  ref={(el) => { if (hasDropdown) navItemRefs.current[item.path] = el; }}
+                  className="relative group/nav"
                   onMouseEnter={() => hasDropdown && handleMouseEnter(item.path)}
                   onMouseLeave={handleMouseLeave}
                 >
                   <Link
                     to={item.path}
-                    className="relative px-3 py-2 text-sm font-medium tracking-wide transition-all duration-200 rounded-md group overflow-visible flex items-center gap-1.5"
+                    className={`relative px-4 py-2 text-sm font-bold tracking-wide transition-all duration-300 rounded-xl flex items-center gap-1.5 ${isActive
+                        ? 'text-jungle-yellow'
+                        : 'text-white/90 hover:text-white'
+                      }`}
                   >
-                    {/* Subtle background on hover */}
-                    <motion.div
-                      className="absolute inset-0 rounded-md bg-white/15"
-                      initial={{ opacity: 0 }}
-                      whileHover={{ opacity: 1 }}
-                      transition={{ duration: 0.2, ease: "easeOut" }}
-                    />
+                    <span className="relative z-10">{item.name}</span>
+                    {hasDropdown && (
+                      <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-300 ${isHovered ? 'rotate-180' : ''}`} />
+                    )}
 
-                    {/* Professional underline animation */}
+                    {/* Hover indicator background */}
                     <motion.div
-                      className={`absolute bottom-0 left-0 right-0 h-[2px] rounded-full ${isActive ? (isScrolled ? 'bg-jungle' : 'bg-white') : (isScrolled ? 'bg-jungle/0 group-hover:bg-jungle' : 'bg-white/0 group-hover:bg-white')
-                        }`}
-                      initial={false}
-                      whileHover={{
-                        scaleX: 1,
-                        opacity: 1
-                      }}
-                      transition={{ duration: 0.2, ease: "easeOut" }}
-                      style={{
-                        transformOrigin: 'center',
-                        scaleX: isActive ? 1 : 0,
-                        opacity: isActive ? 1 : 0,
-                        boxShadow: isActive ? '0 2px 8px rgba(255, 255, 255, 0.4)' : 'none'
-                      }}
+                      className="absolute inset-0 bg-white/10 rounded-xl -z-10"
+                      initial={{ opacity: 0, scale: 0.95 }}
+                      whileHover={{ opacity: 1, scale: 1 }}
                     />
 
                     {/* Active indicator bar */}
                     {isActive && (
                       <motion.div
-                        className={`absolute bottom-0 left-0 right-0 h-[2px] rounded-full ${isScrolled ? 'bg-jungle' : 'bg-white'}`}
-                        layoutId="activeNavUnderline"
-                        transition={{
-                          type: "spring",
-                          stiffness: 500,
-                          damping: 35,
-                          mass: 0.6
-                        }}
-                        style={{
-                          boxShadow: isScrolled ? '0 2px 8px rgba(34, 197, 94, 0.2)' : '0 2px 8px rgba(255, 255, 255, 0.4)'
-                        }}
+                        layoutId="navActiveBar"
+                        className="absolute -bottom-1 left-4 right-4 h-1 bg-jungle-yellow rounded-full shadow-[0_2px_10px_rgba(251,191,36,0.4)]"
+                        transition={{ type: "spring", stiffness: 300, damping: 30 }}
                       />
                     )}
-
-                    {/* Text with strong contrast */}
-                    <motion.span
-                      className={`relative z-10 block whitespace-nowrap font-medium ${isActive
-                        ? 'text-jungle-yellow font-semibold'
-                        : 'text-white group-hover:text-jungle-yellow'
-                        }`}
-                      style={{
-                        textShadow: isActive && !isScrolled
-                          ? '0 2px 4px rgba(0, 0, 0, 0.5), 0 1px 2px rgba(0, 0, 0, 0.7)'
-                          : 'none',
-                        WebkitTextStroke: !isScrolled ? '0.3px rgba(0, 0, 0, 0.3)' : 'none'
-                      }}
-                      transition={{
-                        duration: 0.2,
-                        ease: "easeOut"
-                      }}
-                    >
-                      {item.name}
-                    </motion.span>
-
-                    {/* Dropdown chevron icon */}
-                    {hasDropdown && (
-                      <motion.div
-                        animate={{ rotate: isHovered ? 180 : 0 }}
-                        transition={{ duration: 0.2, ease: "easeOut" }}
-                      >
-                        <ChevronDown
-                          className={`w-3.5 h-3.5 transition-colors text-white`}
-                          style={{
-                            filter: !isScrolled ? 'drop-shadow(0 1px 2px rgba(0, 0, 0, 0.6))' : 'none'
-                          }}
-                        />
-                      </motion.div>
-                    )}
                   </Link>
-
-                </motion.div>
+                </div>
               );
             })}
-          </div>
+          </nav>
 
-          {/* Language Switcher, Theme Toggle & Mobile Menu Button */}
-          <div className="flex items-center gap-1.5">
-            <LanguageSwitcher />
-
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              transition={{ type: "spring", stiffness: 400, damping: 17 }}
-              onClick={toggleTheme}
-              className={`p-1.5 rounded-md transition-all duration-200 bg-white/10 hover:bg-white/20 text-white backdrop-blur-sm`}
-              aria-label="Toggle theme"
-            >
-              {theme === 'light' ? (
-                <Moon className="w-4 h-4" />
-              ) : (
-                <Sun className="w-4 h-4" />
-              )}
-            </motion.button>
-
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              transition={{ type: "spring", stiffness: 400, damping: 17 }}
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className={`lg:hidden p-1.5 rounded-md transition-all duration-200 bg-white/10 hover:bg-white/20 text-white backdrop-blur-sm`}
-              aria-label="Toggle menu"
-            >
-              <AnimatePresence mode="wait">
-                {isMobileMenuOpen ? (
-                  <motion.div
-                    key="close"
-                    initial={{ rotate: -90, opacity: 0 }}
-                    animate={{ rotate: 0, opacity: 1 }}
-                    exit={{ rotate: 90, opacity: 0 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <X className="w-4 h-4" />
-                  </motion.div>
-                ) : (
-                  <motion.div
-                    key="menu"
-                    initial={{ rotate: 90, opacity: 0 }}
-                    animate={{ rotate: 0, opacity: 1 }}
-                    exit={{ rotate: -90, opacity: 0 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <Menu className="w-4 h-4" />
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </motion.button>
-          </div>
-        </nav>
-      </div>
-
-      {/* Dropdown Menus - Positioned below header container */}
-      <AnimatePresence>
-        {hoveredItem && dropdownPosition && dropdownContent[hoveredItem] && (
-          <motion.div
-            initial={{ opacity: 0, y: -8 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -8 }}
-            transition={{
-              duration: 0.15,
-              ease: "easeOut"
-            }}
-            className={`fixed rounded-lg shadow-xl border border-jungle/20 overflow-hidden z-[100000] ${theme === 'dark' ? 'bg-[#1a1a1a]' : 'bg-white'
-              }`}
-            style={{
-              left: `${dropdownPosition.left}px`,
-              top: `${dropdownPosition.top}px`,
-              boxShadow: '0 10px 30px rgba(0, 0, 0, 0.25), 0 0 2px rgba(0, 0, 0, 0.15)',
-              backgroundColor: theme === 'dark' ? 'rgba(26, 26, 26, 0.99)' : 'rgba(255, 255, 255, 0.99)',
-              backdropFilter: 'blur(12px)'
-            }}
-            onMouseEnter={() => handleMouseEnter(hoveredItem)}
-            onMouseLeave={handleMouseLeave}
-          >
-            {/* Dropdown arrow */}
-            <div
-              className={`absolute -top-1.5 left-5 w-3 h-3 border-l border-t border-jungle/20 transform rotate-45 ${theme === 'dark' ? 'bg-[#1a1a1a]' : 'bg-white'
-                }`}
-              style={{
-                backgroundColor: theme === 'dark' ? 'rgba(26, 26, 26, 0.99)' : 'rgba(255, 255, 255, 0.99)'
-              }}
-            />
-
-            <div className="flex w-[600px] h-[320px]">
-              {/* Left Side - Menu Items */}
-              <div className="w-1/2 py-3 overflow-y-auto">
-                {dropdownContent[hoveredItem].map((dropdownItem, idx) => {
-                  const Icon = dropdownItem.icon;
-                  return (
-                    <Link
-                      key={dropdownItem.path}
-                      to={dropdownItem.path}
-                      className="group/dropdown relative flex items-center gap-3 px-5 py-3 hover:bg-jungle/5 transition-colors duration-150"
-                    >
-                      {/* Icon */}
-                      {Icon && (
-                        <div className="flex-shrink-0 p-1.5 rounded-md bg-jungle/5 text-jungle/70 group-hover/dropdown:bg-jungle/15 group-hover/dropdown:text-jungle transition-all">
-                          <Icon className="w-4 h-4" />
-                        </div>
-                      )}
-
-                      {/* Content */}
-                      <div className="flex-1 min-w-0">
-                        <div className="flex items-center justify-between">
-                          <div className="font-semibold text-foreground group-hover/dropdown:text-jungle transition-colors text-sm">
-                            {dropdownItem.label}
-                          </div>
-                          {/* Arrow indicator */}
-                          <div className="opacity-0 -translate-x-2 group-hover/dropdown:opacity-100 group-hover/dropdown:translate-x-0 transition-all duration-300">
-                            <ArrowRight className="w-3.5 h-3.5 text-jungle" />
-                          </div>
-                        </div>
-                        {dropdownItem.description && (
-                          <div className="text-xs text-muted-foreground mt-0.5 line-clamp-1 opacity-80 group-hover/dropdown:opacity-100 transition-opacity">
-                            {dropdownItem.description}
-                          </div>
-                        )}
-                      </div>
-                    </Link>
-                  );
-                })}
-              </div>
-
-              {/* Right Side - Featured Image Background */}
-              <div className="w-1/2 relative overflow-hidden bg-gray-100">
-                {/* Background Image */}
-                <div className="absolute inset-0">
-                  <img
-                    src={dropdownContent[hoveredItem][0]?.image || heroWildlifeImage}
-                    alt="Menu Feature"
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                </div>
-
-                {/* Content Overlay */}
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                  <div className="text-sm font-medium text-jungle-yellow mb-2 uppercase tracking-wider">Featured</div>
-                  <h3 className="text-xl font-bold font-heading mb-2 leading-tight">
-                    {hoveredItem === '/destinations' ? 'Explore Tanzania' :
-                      hoveredItem === '/about' ? 'Our Heritage' :
-                        hoveredItem === '/news' ? 'Latest Updates' :
-                          hoveredItem === '/investments' ? 'Invest in Nature' :
-                            'Discover More'}
-                  </h3>
-                  <p className="text-sm text-white/80 line-clamp-2">
-                    {hoveredItem === '/destinations' ? 'Discover the boundless beauty of Tanzania\'s national parks and game reserves.' :
-                      hoveredItem === '/about' ? 'Learn about our mission to protect and preserve wildlife for future generations.' :
-                        'Stay updated with the latest news, conservation efforts, and community initiatives.'}
-                  </p>
-                </div>
-              </div>
+          {/* Quick Actions */}
+          <div className="flex items-center gap-3">
+            <div className="hidden sm:block">
+              <LanguageSwitcher />
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
 
-      {/* Mobile Menu */}
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              onClick={toggleTheme}
+              className="p-2 rounded-2xl transition-all duration-300 bg-white/10 text-white hover:bg-white/20"
+            >
+              {theme === 'light' ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
+            </motion.button>
+
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="lg:hidden p-2 rounded-2xl bg-white text-jungle shadow-lg hover:bg-white/90"
+            >
+              {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </motion.button>
+          </div>
+        </div>
+
+        {/* Floating Dropdown Menus */}
+        <AnimatePresence>
+          {hoveredItem && dropdownPosition && dropdownContent[hoveredItem] && (
+            <motion.div
+              initial={{ opacity: 0, y: 20, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: 10, scale: 0.95 }}
+              className="fixed rounded-3xl shadow-2xl border border-white/20 overflow-hidden z-[1001] bg-white/90 dark:bg-gray-900/90 backdrop-blur-3xl"
+              style={{
+                left: `${dropdownPosition.left - 100}px`,
+                top: `${dropdownPosition.top + 20}px`,
+                width: '600px',
+              }}
+              onMouseEnter={() => handleMouseEnter(hoveredItem)}
+              onMouseLeave={handleMouseLeave}
+            >
+              <div className="flex h-[380px]">
+                {/* Left Side - Links */}
+                <div className="w-1/2 p-4 overflow-y-auto border-r border-white/10">
+                  {dropdownContent[hoveredItem].map((item) => {
+                    const Icon = item.icon;
+                    return (
+                      <Link
+                        key={item.path}
+                        to={item.path}
+                        className="group/item flex items-center gap-4 p-4 rounded-2xl hover:bg-jungle/5 transition-all mb-1"
+                      >
+                        <div className="p-3 rounded-xl bg-jungle/10 text-jungle group-hover/item:bg-jungle group-hover/item:text-white transition-all">
+                          {Icon && <Icon className="w-5 h-5" />}
+                        </div>
+                        <div>
+                          <p className="font-bold text-foreground text-sm leading-none mb-1">{item.label}</p>
+                          <p className="text-xs text-muted-foreground line-clamp-1">{item.description}</p>
+                        </div>
+                      </Link>
+                    );
+                  })}
+                </div>
+                {/* Right Side - Visual */}
+                <div className="w-1/2 relative p-4">
+                  <div className="h-full rounded-2xl overflow-hidden relative group">
+                    <img
+                      src={dropdownContent[hoveredItem][0]?.image || heroWildlifeImage}
+                      className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                    <div className="absolute bottom-6 left-6 right-6">
+                      <span className="text-[10px] font-black tracking-[0.2em] text-jungle-yellow uppercase mb-2 block">Featured</span>
+                      <h3 className="text-xl font-heading font-black text-white leading-tight">
+                        {hoveredItem.replace('/', '').toUpperCase()}
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </motion.header>
+
+      {/* Mobile Glass Menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-            className={`lg:hidden border-t border-jungle/20 shadow-lg overflow-hidden ${theme === 'dark' ? 'bg-[#1a1a1a]' : 'bg-white'
-              }`}
-            style={{
-              backgroundColor: theme === 'dark' ? 'rgba(26, 26, 26, 0.99)' : 'rgba(255, 255, 255, 0.99)',
-              backdropFilter: 'blur(12px)'
-            }}
+            initial={{ opacity: 0, scale: 0.95, y: -20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.95, y: -20 }}
+            className="fixed top-24 left-4 right-4 bg-white/90 dark:bg-gray-900/90 backdrop-blur-3xl rounded-[2.5rem] border border-white/20 shadow-2xl overflow-hidden z-[1002]"
           >
-            <div className="container-safari py-4 space-y-1">
-              {navItems.map((item, index) => {
-                const isActive = location.pathname === item.path;
-                return (
-                  <motion.div
-                    key={item.path}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -20 }}
-                    transition={{
-                      delay: index * 0.05,
-                      duration: 0.2,
-                      ease: "easeOut"
-                    }}
+            <div className="p-6 flex flex-col gap-2">
+              {navItems.map((item, index) => (
+                <motion.div
+                  key={item.path}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: index * 0.05 }}
+                >
+                  <Link
+                    to={item.path}
+                    className="flex items-center justify-between p-4 rounded-2xl hover:bg-jungle/5 transition-all group"
                   >
-                    <Link
-                      to={item.path}
-                      className={`relative block px-5 py-3.5 text-base md:text-lg font-heading font-semibold tracking-wide transition-all duration-300 rounded-lg overflow-hidden group ${isActive
-                        ? 'text-jungle bg-jungle/10'
-                        : 'text-foreground hover:text-jungle hover:bg-jungle/8'
-                        }`}
-                    >
-                      {/* Background hover effect */}
-                      <motion.div
-                        className="absolute inset-0 bg-jungle/0 group-hover:bg-jungle/5 transition-all duration-300"
-                        initial={false}
-                      />
-
-                      <motion.span
-                        className="relative z-10 block"
-                        whileHover={{ x: 3 }}
-                        transition={{ duration: 0.2, ease: "easeOut" }}
-                      >
-                        {item.name}
-                      </motion.span>
-
-                      {/* Active indicator bar */}
-                      {isActive && (
-                        <motion.div
-                          className="absolute left-0 top-0 bottom-0 w-1 bg-jungle rounded-r-full"
-                          layoutId="mobileActiveIndicator"
-                          transition={{ type: "spring", stiffness: 400, damping: 30 }}
-                          style={{
-                            boxShadow: '2px 0 8px rgba(34, 197, 94, 0.3)'
-                          }}
-                        />
-                      )}
-
-                      {/* Bottom underline for active */}
-                      {isActive && (
-                        <motion.div
-                          className="absolute bottom-0 left-0 right-0 h-0.5 bg-jungle/30"
-                          layoutId="mobileActiveUnderline"
-                          transition={{ type: "spring", stiffness: 400, damping: 30 }}
-                        />
-                      )}
-                    </Link>
-                  </motion.div>
-                );
-              })}
+                    <span className="text-lg font-heading font-black text-foreground group-hover:text-jungle transition-colors">{item.name}</span>
+                    <ArrowRight className="w-5 h-5 text-muted-foreground opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all" />
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
+            <div className="p-6 bg-jungle/5 border-t border-white/10 flex items-center justify-between">
+              <span className="text-xs font-black uppercase tracking-widest text-muted-foreground">Select Language</span>
+              <LanguageSwitcher />
             </div>
           </motion.div>
         )}
       </AnimatePresence>
-    </header>
+    </div>
   );
 }

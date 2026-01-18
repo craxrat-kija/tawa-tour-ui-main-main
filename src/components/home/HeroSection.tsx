@@ -499,9 +499,6 @@ export default function HeroSection() {
 
               {/* Game Reserves Marquee - Infinite Horizontal Clickable Slider */}
               <div className="relative w-full overflow-hidden mb-4 group/marquee perspective-1000 py-4">
-                {/* Gradient Masks for smooth fade effect at edges */}
-                <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-background via-background/80 to-transparent z-20 pointer-events-none" />
-                <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-background via-background/80 to-transparent z-20 pointer-events-none" />
 
                 <motion.div
                   className="flex gap-8 min-w-max py-4"
