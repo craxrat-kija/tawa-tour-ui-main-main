@@ -165,8 +165,8 @@ export default function Header() {
                   <Link
                     to={item.path}
                     className={`relative px-4 py-2 text-sm font-bold tracking-wide transition-all duration-300 rounded-xl flex items-center gap-1.5 ${isActive
-                        ? 'text-jungle-yellow'
-                        : 'text-white/90 hover:text-white'
+                      ? 'text-jungle-yellow'
+                      : 'text-white/90 hover:text-white'
                       }`}
                   >
                     <span className="relative z-10">{item.name}</span>
@@ -288,7 +288,7 @@ export default function Header() {
             initial={{ opacity: 0, scale: 0.95, y: -20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: -20 }}
-            className="fixed top-24 left-4 right-4 bg-white/90 dark:bg-gray-900/90 backdrop-blur-3xl rounded-[2.5rem] border border-white/20 shadow-2xl overflow-hidden z-[1002]"
+            className="fixed top-24 left-4 right-4 bg-white/90 dark:bg-gray-900/90 backdrop-blur-3xl rounded-[2.5rem] border border-white/20 shadow-2xl overflow-hidden z-[1002] pointer-events-auto"
           >
             <div className="p-6 flex flex-col gap-2">
               {navItems.map((item, index) => (
@@ -300,6 +300,7 @@ export default function Header() {
                 >
                   <Link
                     to={item.path}
+                    onClick={() => setIsMobileMenuOpen(false)}
                     className="flex items-center justify-between p-4 rounded-2xl hover:bg-jungle/5 transition-all group"
                   >
                     <span className="text-lg font-heading font-black text-foreground group-hover:text-jungle transition-colors">{item.name}</span>
@@ -308,9 +309,28 @@ export default function Header() {
                 </motion.div>
               ))}
             </div>
-            <div className="p-6 bg-jungle/5 border-t border-white/10 flex items-center justify-between">
-              <span className="text-xs font-black uppercase tracking-widest text-muted-foreground">Select Language</span>
-              <LanguageSwitcher />
+            <div className="p-6 bg-jungle/5 border-t border-white/10 flex items-center justify-between gap-4">
+              <div className="flex flex-col gap-1">
+                <span className="text-xs font-black uppercase tracking-widest text-muted-foreground">Preferences</span>
+                <div className="flex items-center gap-3">
+                  <LanguageSwitcher />
+                  <motion.button
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                    onClick={toggleTheme}
+                    className="p-2.5 rounded-xl bg-white dark:bg-gray-800 text-jungle shadow-md border border-jungle/10"
+                  >
+                    {theme === 'light' ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
+                  </motion.button>
+                </div>
+              </div>
+              <Link
+                to="/contact"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="px-6 py-3 bg-jungle text-white rounded-2xl font-bold text-sm shadow-lg shadow-jungle/20"
+              >
+                Contact Us
+              </Link>
             </div>
           </motion.div>
         )}
