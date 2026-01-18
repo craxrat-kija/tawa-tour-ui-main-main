@@ -16,26 +16,7 @@ export default function HeroSection() {
   const { t } = useTranslation();
   // Latest news is now handled in the NewsAndEvents component
 
-  const [isTypewriterComplete, setIsTypewriterComplete] = useState(false);
 
-  // Hero background images for carousel
-  const heroImages = [
-    heroWildlifeImage,
-    mikumiImage,
-    pandeImage,
-    selousImage,
-  ];
-
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-  // Auto-advance carousel
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prev) => (prev + 1) % heroImages.length);
-    }, 5000); // Change image every 5 seconds
-
-    return () => clearInterval(interval);
-  }, [heroImages.length]);
 
 
 
@@ -228,60 +209,23 @@ export default function HeroSection() {
   return (
     <>
       <section className="relative h-[50vh] min-h-[400px] md:h-[55vh] flex overflow-hidden">
-        {/* Simplified Subtle Overlay */}
-        <div className="absolute inset-0 z-[1] pointer-events-none bg-black/30" />
-
-        {/* Sliding Background Images */}
+        {/* Video Background */}
         <div className="absolute inset-0 overflow-hidden z-0">
-          {heroImages.map((image, index) => (
-            <motion.div
-              key={index}
-              className="absolute inset-0"
-              initial={{ opacity: 0 }}
-              animate={{
-                opacity: index === currentImageIndex ? 1 : 0,
-                scale: index === currentImageIndex ? 1.1 : 1,
-              }}
-              transition={{
-                duration: 1.5,
-                ease: 'easeInOut',
-              }}
-            >
-              <img
-                src={image}
-                alt={`Tanzania Wildlife ${index + 1}`}
-                className="w-full h-full object-cover"
-                loading={index === 0 ? 'eager' : 'lazy'}
-                {...({ fetchpriority: index === 0 ? 'high' : 'auto' } as any)}
-                decoding="async"
-                style={{
-                  objectPosition: 'center center',
-                  imageRendering: 'crisp-edges',
-                  WebkitBackfaceVisibility: 'hidden',
-                  backfaceVisibility: 'hidden',
-                  transform: 'translateZ(0)',
-                  willChange: 'transform',
-                }}
-              />
-            </motion.div>
-          ))}
-          {/* Dark overlay for text readability */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70" />
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="w-full h-full object-cover"
+            poster={heroWildlifeImage}
+          >
+            <source src="/background_banner.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
 
-          {/* Carousel Indicators */}
-          <div className="absolute bottom-16 md:bottom-20 left-1/2 -translate-x-1/2 z-20 flex gap-2">
-            {heroImages.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentImageIndex(index)}
-                className={`h-2 rounded-full transition-all duration-300 ${index === currentImageIndex
-                  ? 'w-8 bg-jungle'
-                  : 'w-2 bg-white/50 hover:bg-white/70'
-                  }`}
-                aria-label={`Go to slide ${index + 1}`}
-              />
-            ))}
-          </div>
+          {/* Dynamic Overlay - Adapts to themes by using a balance of dark and brand colors */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/70 z-[1]" />
+          <div className="absolute inset-0 bg-jungle/10 mix-blend-overlay z-[2]" />
         </div>
 
         {/* Content Overlay */}
